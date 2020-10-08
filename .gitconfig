@@ -1,0 +1,50 @@
+[user]
+	name = Matt Rohr									# Not private; available for viewing with 'git log' on commits
+	email = 67395122+mattrohr@users.noreply.github.com	# Not private; available for viewing with 'git log' on commits
+	signingkey = C6C3DD2A201ED90B						# Not private; available for viewing with 'git log' on commits
+[push]
+	default = simple									# Adds additional safety feature: refuses to push if the upstream branch’s name is different from the local one
+[core]
+	excludesfile = ~/.gitignore_global					# Specify global files to ignore, in addition to the local .gitignore
+	editor = 'nova' --wait								# Specify editor of choice and wait for exiting editor before proceeding
+[alias]
+	one = log --oneline
+	last = log -1 HEAD
+	pretty = log --graph --decorate --pretty=oneline --abbrev-commit --all
+	branches = branch -a --color -v						# show all branches, even across remotes
+	unstage = reset HEAD --
+	credit = "!f() { \
+		if [ -n \"$1\" ] && [ -n \"$2\" ]; then \
+			GIT_EDITOR=\"git interpret-trailers --in-place --trailer='Co-authored-by: $1 <$2>'\" git commit --amend; \
+		fi \
+	}; f"
+[color]
+	ui = auto											# Default is off; many colors overridden below
+[color "diff"]
+	meta = yellow bold
+	commit = green bold
+	frag = magenta bold
+	old = red bold
+	new = green bold
+	whitespace = red reverse
+[color "diff-highlight"]
+	oldNormal = red bold
+	oldHighlight = "red bold 52"
+	newNormal = "green bold"
+	newHighlight = "green bold 22"
+[color "branch"]
+	current = yellow reverse
+	local = yellow
+	remote = green
+[color "status"]
+	added = yellow
+	changed = green
+	untracked = cyan
+[commit]
+	gpgsign = true										# Sign all commits automatically without need for -s flag
+[help]
+	autocorrect = true									# Corrects misspellings then runs them without delay
+[github]
+	user = mattrohr
+[credential]
+	helper = osxkeychain

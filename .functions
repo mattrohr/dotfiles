@@ -1,0 +1,132 @@
+#!/usr/bin/env zsh
+
+#############################################
+# Navigation								#
+#############################################
+
+# Normalize `open` across Linux, macOS, and Windows.
+# This is needed to make the `o` function (see below) cross-platform.
+if [ ! $(uname -s) = 'Darwin' ]; then
+	if grep -q Microsoft /proc/version; then
+		# Ubuntu on Windows using the Linux subsystem
+		alias open='explorer.exe';
+	else
+		alias open='xdg-open';
+	fi
+fi
+
+# `o` with no arguments opens the current directory, otherwise opens the given location
+function o() {
+	if [ $# -eq 0 ]; then
+		open .;
+	else
+		open "$@";
+	fi;
+}
+
+# Change working directory to the top-most Finder window location
+function cdf() {
+	cd "$(osascript -e 'tell app "Finder" to POSIX path of (insertion location as alias)')";
+}
+
+# Create a new directory and enter it
+function mkd() {
+	mkdir -p "$@" && cd "$_";
+}
+
+#############################################
+# General Utility							#
+#############################################
+
+# Use Git’s colored diff when available
+hash git &>/dev/null;
+if [ $? -eq 0 ]; then
+	function diff() {
+		git diff --no-index --color-words "$@";
+	}
+fi;
+
+# `n` with no arguments opens the current directory in Nova Editor, otherwise opens the given location
+function n() {
+	if [ $# -eq 0 ]; then
+		nova .;
+	else
+		nova "$@";
+	fi;
+}
+
+# `vs` with no arguments opens the current directory in Visual Studio Code Editor, otherwise opens the given location
+function vs() {
+	if [ $# -eq 0 ]; then
+		code .;
+	else
+		code "$@";
+	fi;
+}
+
+function youtube-song {
+	youtube-dl --audio-format m4a -x "$@"
+}
+
+# usage example: "wordsmith W X R" yields 'WaXbeRry' 'WaXflowerR' among others. Useful for generating dumb or overly forced acronyms for projects names.
+function wordsmith {
+	grep -i ''"$1"'.*'"$2"'.*'"$3"'.*'"$4"'.*'"$5"'.*'"$6"'.*'"$7"'.*'"$8"'.*'"$9"'.*' /usr/share/dict/words
+}
+
+function colours() {
+for i in {0..255} ; do
+  printf "\x1b[38;5;${i}mcolour${i}\n"
+done
+}
+
+# Serve current directory
+serve() {
+    ruby -run -e httpd . -p "${1:-8080}"
+}
+
+# Check if a file contains non-ascii characters
+nonascii() {
+    LC_ALL=C grep -n '[^[:print:][:space:]]' "${1}"
+}
+
+# Notify after terminal completion with optional user-defined message 
+# usage example: >> brew install mactex && notify "Mactex installed"
+notify() {
+	echo "$1" | terminal-notifier -sound default
+}
+
+#############################################
+# SSH										#
+#############################################
+
+arecibo () {
+	ssh "$1"@remote.naic.edu
+}
+
+gbt () {
+	ssh "$1"@stargate.gb.nrao.edu
+}
+
+nemo () {
+	ssh "$1"@hydra.phys.uwm.edu
+}
+
+peregrine () {
+	ssh "$1"@login.peregrine.hpc.uwm.edu
+}
+
+unixdev1 () {
+	ssh "$1"@unixdev1.hpc.uwm.edu
+}
+
+unixdev2 () {
+	ssh "$1"@unixdev2.hpc.uwm.edu
+}
+
+avi () {
+	ssh "$1"@login.avi.hpc.uwm.edu
+}
+
+mortimer () {
+	ssh "$1"@login.mortimer.hpc.uwm.edu
+}

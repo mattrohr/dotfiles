@@ -1,0 +1,30 @@
+# Compiled source files
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+*.pyc
+
+# Folder view configuration files
+.DS_Store
+.DS_Store?
+Desktop.ini
+
+# Personal
+.extra
+
+# Thumbnail cache files
+._*
+Thumbs.db
+ehthumbs.db
+
+# Files that might appear on external disks
+.Spotlight-V100
+.Trashes
+.TemporaryItems
+.DocumentRevisions-V100
+.fseventsd
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
