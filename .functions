@@ -1,22 +1,32 @@
 #!/usr/bin/env zsh
 
 #############################################
+# Search									#
+#############################################
+
+# Search command history interactively
+h() {
+	print -z $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | sed 's/ *[0-9]* *//')
+}
+
+# Show man page in Preview.app
+manp() {
+  local page
+  if (( $# > 0 )); then
+	for page in "$@"; do
+	  man -t "$page" | open -f -a Preview
+	done
+  else
+	print 'What manual page do you want?' >&2
+  fi
+}
+
+#############################################
 # Navigation								#
 #############################################
 
-# Normalize `open` across Linux, macOS, and Windows.
-# This is needed to make the `o` function (see below) cross-platform.
-if [ ! $(uname -s) = 'Darwin' ]; then
-	if grep -q Microsoft /proc/version; then
-		# Ubuntu on Windows using the Linux subsystem
-		alias open='explorer.exe';
-	else
-		alias open='xdg-open';
-	fi
-fi
-
-# `o` with no arguments opens the current directory, otherwise opens the given location
-function o() {
+# `o` with no arguments opens the current directory in Finder, otherwise opens the given location
+o() {
 	if [ $# -eq 0 ]; then
 		open .;
 	else
@@ -24,30 +34,45 @@ function o() {
 	fi;
 }
 
+# Create a new directory and enter it
+mcd() {
+	mkdir "${1}" && cd "${1}"
+}
+
 # Change working directory to the top-most Finder window location
-function cdf() {
+cdf() {
 	cd "$(osascript -e 'tell app "Finder" to POSIX path of (insertion location as alias)')";
 }
 
-# Create a new directory and enter it
-function mkd() {
-	mkdir -p "$@" && cd "$_";
+# Go up [n] directories
+up()
+{
+	local cdir="$(pwd)"
+	if [[ "${1}" == "" ]]; then
+		cdir="$(dirname "${cdir}")"
+	elif ! [[ "${1}" =~ ^[0-9]+$ ]]; then
+		echo "Error: argument must be a number"
+	elif ! [[ "${1}" -gt "0" ]]; then
+		echo "Error: argument must be positive"
+	else
+		for ((i=0; i<${1}; i++)); do
+			local ncdir="$(dirname "${cdir}")"
+			if [[ "${cdir}" == "${ncdir}" ]]; then
+				break
+			else
+				cdir="${ncdir}"
+			fi
+		done
+	fi
+	cd "${cdir}"
 }
 
 #############################################
-# General Utility							#
+# Edit										#
 #############################################
 
-# Use Git’s colored diff when available
-hash git &>/dev/null;
-if [ $? -eq 0 ]; then
-	function diff() {
-		git diff --no-index --color-words "$@";
-	}
-fi;
-
-# `n` with no arguments opens the current directory in Nova Editor, otherwise opens the given location
-function n() {
+# `n` with no arguments or opens the current directory in Nova editor, otherwise opens the given file or directory
+n() {
 	if [ $# -eq 0 ]; then
 		nova .;
 	else
@@ -55,8 +80,8 @@ function n() {
 	fi;
 }
 
-# `vs` with no arguments opens the current directory in Visual Studio Code Editor, otherwise opens the given location
-function vs() {
+# `vs` with no arguments opens the current directory in Visual Studio Code editor, otherwise opens the given file or directory
+vs() {
 	if [ $# -eq 0 ]; then
 		code .;
 	else
@@ -64,29 +89,17 @@ function vs() {
 	fi;
 }
 
-function youtube-song {
-	youtube-dl --audio-format m4a -x "$@"
-}
-
-# usage example: "wordsmith W X R" yields 'WaXbeRry' 'WaXflowerR' among others. Useful for generating dumb or overly forced acronyms for projects names.
-function wordsmith {
-	grep -i ''"$1"'.*'"$2"'.*'"$3"'.*'"$4"'.*'"$5"'.*'"$6"'.*'"$7"'.*'"$8"'.*'"$9"'.*' /usr/share/dict/words
-}
-
-function colours() {
-for i in {0..255} ; do
-  printf "\x1b[38;5;${i}mcolour${i}\n"
-done
-}
-
-# Serve current directory
-serve() {
-    ruby -run -e httpd . -p "${1:-8080}"
-}
-
 # Check if a file contains non-ascii characters
 nonascii() {
-    LC_ALL=C grep -n '[^[:print:][:space:]]' "${1}"
+	LC_ALL=C grep -n '[^[:print:][:space:]]' "${1}"
+}
+
+#############################################
+# General Utility							#
+#############################################
+
+youtube-song() {
+	youtube-dl --audio-format m4a -x "$@"
 }
 
 # Notify after terminal completion with optional user-defined message 
@@ -96,9 +109,15 @@ notify() {
 }
 
 #############################################
-# SSH										#
+# Network									#
 #############################################
 
+# Serve current directory
+serve() {
+	ruby -run -e httpd . -p "${1:-8080}"
+}
+
+# Pass user-defined username to SSH, instead of providing valid username credential to web-scraping bots
 arecibo () {
 	ssh "$1"@remote.naic.edu
 }
