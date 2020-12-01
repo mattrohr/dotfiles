@@ -1,15 +1,34 @@
 # Load the shell dotfiles, and then some:
-# * ~/.path can be used to extend `$PATH`.
-# * ~/.extra can be used for other settings not commited to github.
-for file in ~/.{aliases,exports,functions}; do
+# * ~/.extra can be used for other settings not committed to GitHub.
+for file in ~/.{prompt,aliases,functions,extra,exports}; do
 	[ -r "$file" ] && [ -f "$file" ] && source "$file";
 done;
 unset file;
 
-# Add tab completion for SSH hostnames based on ~/.ssh/config, ignoring wildcards
-[ -e "$HOME/.ssh/config" ] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2- | tr ' ' '\n')" scp sftp ssh;
+#############################################
+# Packages            							    		#
+#############################################
 
-# Set shell python as global pyenv version
+# Set shell python as global pyenv version, unless overridden with local pyenv version
 if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
+
+source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# example usage: 'ls -f' describes available flags, and interactively cycles through them with subsequent tabs
+if type brew &>/dev/null; then
+  FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+  autoload -Uz compinit
+  compinit
+fi
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+## Option-C is FZF default binding for changing directory, but is overridden by macOS to output Latin script. Override the override by binding Latin script to change directory
+bindkey "ç" fzf-cd-widget
+# Setting fd as the default source for fzf
+export FZF_DEFAULT_COMMAND='fd --type f'
+# To apply the command to CTRL-T as well
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
