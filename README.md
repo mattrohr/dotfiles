@@ -1,35 +1,39 @@
 # Matt's dotfiles
-**Warning:** If you try these dotfiles: first clone or fork this repository, review code, then remove unwanted bits. Don’t blindly use settings unless you know what that entails. Use at your own risk!
+![Customized shell](https://i.imgur.com/3VJyJ7S.png)
+*Fig. 1: Customized shell*
 
-## Install
-Homebrew is a dependency, which you can install with:
+These configuration files reproduce my system with little more than ubiquitous shell scripts. This makes hardware expendable in case of catastrophe, upgrade, or porting to a cluster.
+
+## Installation
+Homebrew is a dependency which installs tools and manages their versions. You can install it with:
 ```bash 
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)" &> /dev/null
 ```
-Note that this install script can safely be run multiple times.
 
-I store my dotfiles in iCloud. If this is a new Mac, iCloud folders probably wouldn't have had time to sync yet. You may create and navigate to it with:
+Create (or select) and navigate to a folder to store your dotfiles, like:
 ```bash
 mkdir ~/Library/Mobile\ Documents/com~apple~CloudDocs/Archive/dotfiles/
 cd ~/Library/Mobile\ Documents/com~apple~CloudDocs/Archive/dotfiles/
 ```
 
-Give current user execution permissions of shell scripts within the current directory:
+Clone and enter repository:
 ```bash
-sudo chmod +x *
+git clone https://github.com/mattrohr/dotfiles.git && cd dotfiles
 ```
-Clone repository and run install script:
+
+Give current user execution permissions of shell scripts within the current directory, then configure machine with dotfiles:
 ```bash
-git clone https://github.com/mattrohr/dotfiles.git && cd dotfiles && source bootstrap.sh
+sudo chmod u+x * && ./bootstrap.sh
 ```
+Note: Scripts are idempotent, they can safely be run again. Useful for when settings get reset, like when macOS updates clobber Touch ID authentication permissions.
 
 ## Manual Changes
+See [manual installation steps](./manual.md).
 
-Check out [manual installation steps](./manual.md).
+Finally, if you're new to macOS, read [tips and tricks](./tips.md).
 
-Finally, if you're new to Mac, checkout [tips and tricks](./tips.md).
-
-## Thanks
-* [Mathias Bynen](https://mathiasbynens.be/) and his [dotfiles repository](https://github.com/mathiasbynens/dotfiles)
-* [Peter Bosse](https://github.com/ptb) and his [macOS Setup repository](https://github.com/ptb/mac-setup)
-* [Kevin Suttle](http://kevinsuttle.com/) and his [macOS-Defaults project](https://github.com/kevinSuttle/macOS-Defaults), which aims to provide better documentation for [`~/.macos`](https://mths.be/macos)
+## Acknowledgements
+- [Mathias Bynen](https://mathiasbynens.be/) for his [dotfiles repository structure](https://github.com/mathiasbynens/dotfiles)
+- [Anish Athalye](https://github.com/anishathalye) for his [prompt theme](hhttps://github.com/anishathalye/dotfiles/blob/master/zsh/prompt.zsh)
+- [Kevin Suttle](http://kevinsuttle.com/) for cataloging [macOS-Defaults project](https://github.com/kevinSuttle/macOS-Defaults), which provides sensible documentation for [`~/.macos`](https://github.com/mattrohr/dotfiles/.macos)
+- [Peter Bosse](https://github.com/ptb) and his [macOS Setup repository](https://github.com/ptb/mac-setup)
