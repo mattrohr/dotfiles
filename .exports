@@ -1,27 +1,24 @@
 #!/usr/bin/env zsh
 
-# Change the default editor.
-export EDITOR='nova';
+export VISUAL='nova'; # Default to editing with nova, when available 
+export EDITOR=$VISUAL;
 
-# Highlight section titles in manual pages.
-export LESS_TERMCAP_md="${yellow}";
+export MANPAGER='less -X'; # Don’t clear the screen after quitting a manual page.
 
-# Don’t clear the screen after quitting a manual page.
-export MANPAGER='less -X';
+# Colorize man pages
+export LESS_TERMCAP_md=$'\e[01;38;5;74m'  # color default bold headers light blue
+export LESS_TERMCAP_me=$'\e[0m'           # end bolding
+export LESS_TERMCAP_us=$'\e[04;38;5;146m' # color default underlined arguments light purple
+export LESS_TERMCAP_ue=$'\e[0m'           # end underlining
 
-# Increase Bash history size. Allow 32³ entries; the default is 500.
-export HISTFILE=~/.zsh_history
-export HISTSIZE='32768';
-export HISTFILESIZE="${HISTSIZE}";
-# Omit duplicates and commands that begin with a space from history.
-export HISTCONTROL='ignoreboth';
+export HISTFILE=~/.zsh_history;
+export HISTSIZE=5000; # Maximum commands saved in memory saved to history. Default is 500
+export SAVEHIST=${HISTSIZE}; # Maximum commands saved in $HISTFILE
+setopt INC_APPEND_HISTORY # adds commands as they are typed, not only at shell exit
 
-# Make Python use UTF-8 encoding for output to stdin, stdout, and stderr.
-export PYTHONIOENCODING='UTF-8';
-
-# Avoid issues with `gpg` as installed via Homebrew.
+# Avoid issues with `gpg` installed by Homebrew
 # https://stackoverflow.com/a/42265848/96656
 export GPG_TTY=$(tty);
 
-# Hide the “default interactive shell is now zsh” warning on macOS.
+# Hide the “default interactive shell is now zsh” warning on macOS
 export BASH_SILENCE_DEPRECATION_WARNING=1;
