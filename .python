@@ -1,6 +1,17 @@
 #!/usr/bin/env zsh
 
-pyenv install 3.8.5
-pyenv global 3.8.5
+# Install latest, standard python3 version with pyenv
+#git clone https://github.com/momo-lab/xxenv-latest.git "$(pyenv root)"/plugins/xxenv-latest
+pyenv install 3.9.0
+pyenv global 3.9.0
+
+#############################################
+# Packages									#
+#############################################
+
 pip install --upgrade pip
-pip3 install neuron
+pip3 install neuron											# package for brain modeling
+pip3 install scipy											# package mathematics, science, and engineering
+pip3 install numpy											# package for scientific computing
+pip3 install pandas											# package for data wrangling
+pip3 install autopep8										# automatically formats Python code to conform to the PEP 8 style guide
