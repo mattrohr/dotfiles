@@ -12,9 +12,6 @@
 .DS_Store?
 Desktop.ini
 
-# Personal
-.extra
-
 # Thumbnail cache files
 ._*
 Thumbs.db
