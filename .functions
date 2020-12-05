@@ -116,36 +116,3 @@ notify() {
 serve() {
 	ruby -run -e httpd . -p "${1:-8080}"
 }
-
-# Pass user-defined username to SSH, instead of providing valid username credential to web-scraping bots
-arecibo () {
-	ssh "$1"@remote.naic.edu
-}
-
-gbt () {
-	ssh "$1"@stargate.gb.nrao.edu
-}
-
-nemo () {
-	ssh "$1"@hydra.phys.uwm.edu
-}
-
-peregrine () {
-	ssh "$1"@login.peregrine.hpc.uwm.edu
-}
-
-unixdev1 () {
-	ssh "$1"@unixdev1.hpc.uwm.edu
-}
-
-unixdev2 () {
-	ssh "$1"@unixdev2.hpc.uwm.edu
-}
-
-avi () {
-	ssh "$1"@login.avi.hpc.uwm.edu
-}
-
-mortimer () {
-	ssh "$1"@login.mortimer.hpc.uwm.edu
-}
