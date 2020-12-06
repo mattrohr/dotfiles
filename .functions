@@ -9,18 +9,6 @@ h() {
 	print -z $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | sed 's/ *[0-9]* *//')
 }
 
-# Show man page in Preview.app
-manp() {
-  local page
-  if (( $# > 0 )); then
-	for page in "$@"; do
-	  man -t "$page" | open -f -a Preview
-	done
-  else
-	print 'What manual page do you want?' >&2
-  fi
-}
-
 #############################################
 # Navigation								#
 #############################################

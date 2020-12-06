@@ -27,6 +27,8 @@ Using vanilla un-configured or mildly-configured Mac OS for a month or so gives 
 - ^ + C in terminal to change directory (requires FZF)
 - In terminal, Putting a backslash in-front of a command, will run the non-aliased version (e.g. \ls)
 - ⌃ + Z in terminal to suspend a process
+- Double click on command in terminal, then tap the man button that appears on the left of the touch bar. The resulting detached man page may then be searched.
+
 ## Shortcuts I should use, but old habits die hard:
 - ⌘ + ↑ and ⌘ + ↓ to go up/down the folder hierarchy
 - ⌘ + shift A for Applications folder while in Finder. Browse this folder to see what's available (Disk Utility, and Activity Monitor are particularly useful for power-users).
