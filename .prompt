@@ -1,33 +1,43 @@
 #!/usr/bin/env zsh
 
+# User customizable options
+# PR_ARROW_CHAR="[some character]"
+# RPR_SHOW_USER=(true, false) - show username in rhs prompt
+# RPR_SHOW_HOST=(true, false) - show host in rhs prompt
+# RPR_SHOW_GIT=(true, false) - show git status in rhs prompt
+# PR_EXTRA="[stuff]" - extra content to add to prompt
+# RPR_EXTRA="[stuff]" - extra content to add to rhs prompt
+
+# Set custom prompt
+
 # Allow for variable/function substitution in prompt
 setopt prompt_subst
 
 # Load color variables to make it easier to color things
 autoload -U colors && colors
 
-# Allow user to select colors by displaying their corresponding value
-alias spectrum='for i in {0..255}; do printf "\x1b[38;5;${i}m%-5i\x1b[0m" $i ; if ! (( ($i + 1 ) % 8 )); then echo ; fi ; done'
-
-# Change default colors
+# Make using 256 colors easier
 if [[ "$(tput colors)" == "256" ]]; then
-    fg[red]="%F{160}"
-    fg[green]="%F{064}"
-    fg[yellow]="%F{136}"
-    fg[blue]="%F{033}"
-    fg[magenta]="%F{125}"
-    fg[cyan]="%F{037}"
-    fg[teal]="%F{041}"
-    fg[orange]="%F{166}"
-    fg[violet]="%F{061}"
-    fg[neon]="%F{112}"
-    fg[pink]="%F{183}"
+    source ~/.spectrum.zsh
+    # change default colors
+    fg[red]=$FG[160]
+    fg[green]=$FG[064]
+    fg[yellow]=$FG[136]
+    fg[blue]=$FG[033]
+    fg[magenta]=$FG[125]
+    fg[cyan]=$FG[037]
+
+    fg[teal]=$FG[041]
+    fg[orange]=$FG[166]
+    fg[violet]=$FG[061]
+    fg[neon]=$FG[112]
+    fg[pink]=$FG[183]
 else
-    fg[teal]="%F{blue}"
-    fg[orange]="%F{yellow}"
-    fg[violet]="%F{magenta}"
-    fg[neon]="%F{green}"
-    fg[pink]="%F{magenta}"
+    fg[teal]=$fg[blue]
+    fg[orange]=$fg[yellow]
+    fg[violet]=$fg[magenta]
+    fg[neon]=$fg[green]
+    fg[pink]=$fg[magenta]
 fi
 
 # Current directory, truncated to 3 path elements (or 4 when one of them is "~")
