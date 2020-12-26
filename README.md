@@ -1,39 +1,39 @@
-# Matt's dotfiles
-![Customized shell](https://i.imgur.com/3VJyJ7S.png)
-*Fig. 1: Customized shell*
+<p align="center">
+<img width="75%" src="https://i.imgur.com/VPkVbH1.png" alt="Banner">
+</p>
 
-These configuration files reproduce my system with little more than ubiquitous shell scripts. This makes hardware expendable in case of catastrophe, upgrade, or porting to a cluster.
+<p align="center">
+<a href="https://github.com/mattrohr/dotfiles/workflows/CI/badge.svg">
+<img src="https://github.com/mattrohr/dotfiles/workflows/CI/badge.svg" alt="CI Status Badge">
+</a>
+</p>
+
+## About
+These files backup, restore, and sync my system settings with ubiquitous shell scripts.
 
 ## Installation
-Homebrew is a dependency which installs tools and manages their versions. You can install it with:
-```bash 
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)" &> /dev/null
-```
+1. Log into Mac App Store so macOS apps specified in [`Brewfile`](https://github.com/mattrohr/dotfiles/blob/master/Brewfile) are installed.
 
-Create (or select) and navigate to a folder to store your dotfiles, like:
+2. Specify repository location:
 ```bash
-mkdir ~/Library/Mobile\ Documents/com~apple~CloudDocs/Archive/dotfiles/
-cd ~/Library/Mobile\ Documents/com~apple~CloudDocs/Archive/dotfiles/
+mkdir -p ~/Library/Mobile\ Documents/com~apple~CloudDocs/Projects && cd ~/Library/Mobile\ Documents/com~apple~CloudDocs/Projects
 ```
 
-Clone and enter repository:
+3. Clone repository and configure machine:
 ```bash
-git clone https://github.com/mattrohr/dotfiles.git && cd dotfiles
+git clone https://github.com/mattrohr/dotfiles.git && cd dotfiles && source install.sh
 ```
 
-Give current user execution permissions of shell scripts within the current directory, then configure machine with dotfiles:
-```bash
-sudo chmod u+x * && ./bootstrap.sh
-```
-Note: Scripts are idempotent, they can safely be run again. Useful for when settings get reset, like when macOS updates clobber Touch ID authentication permissions.
+4. See [`manual.md`](./manual.md) for manual installation steps.
 
-## Manual Changes
-See [manual installation steps](./manual.md).
+## Notes
+If `.secret` exists, it will be sourced in [`.zshrc`](https://github.com/mattrohr/dotfiles/blob/master/.zshrc) along with the other files. You may use this to add commands and files you don’t want to commit to a public repository like `~/.ssh/config`, `/etc/hosts`, and `~/.gnupg/`
+
+Scripts are idempotent, they can safely be run again. Useful for when settings get reset, like when macOS updates clobber Touch ID sudo authentication permission.
 
 Finally, if you're new to macOS, read [tips and tricks](./tips.md).
 
 ## Acknowledgements
-- [Mathias Bynen](https://mathiasbynens.be/) for his [dotfiles repository structure](https://github.com/mathiasbynens/dotfiles)
-- [Anish Athalye](https://github.com/anishathalye) for his [prompt theme](hhttps://github.com/anishathalye/dotfiles/blob/master/zsh/prompt.zsh)
-- [Kevin Suttle](http://kevinsuttle.com/) for cataloging [macOS-Defaults project](https://github.com/kevinSuttle/macOS-Defaults), which provides sensible documentation for [`~/.macos`](https://github.com/mattrohr/dotfiles/.macos)
-- [Peter Bosse](https://github.com/ptb) and his [macOS Setup repository](https://github.com/ptb/mac-setup)
+- [Mathias Bynens](https://mathiasbynens.be/) for his [dotfiles repository structure](https://github.com/mathiasbynens/dotfiles)
+- [Kevin Suttle](http://kevinsuttle.com/) for cataloging [macOS-Defaults project](https://github.com/kevinSuttle/macOS-Defaults), which provides sensible documentation for [`/.macOS`](https://github.com/mattrohr/dotfiles/blob/main/.macOS)
+- [Anish Athalye](https://github.com/anishathalye) for his [prompt theme](https://github.com/anishathalye/dotfiles/blob/master/zsh/prompt.zsh)
