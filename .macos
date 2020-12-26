@@ -262,10 +262,6 @@ if [[ ! `grep "pam_tid.so" /etc/pam.d/sudo` ]]; then
     echo -e "auth       sufficient     pam_tid.so\n$(cat /etc/pam.d/sudo)" |sudo tee /etc/pam.d/sudo;
 fi
 
-# Enable Secure Keyboard Entry in Terminal.app
-# See: https://security.stackexchange.com/a/47786/8918
-defaults write com.apple.Terminal SecureKeyboardEntry -bool true
-
 # Disable the line marks
 defaults write com.apple.Terminal ShowLineMarks -int 0
 
