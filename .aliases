@@ -32,6 +32,10 @@ alias treee='tree -L 3'
 # Enable aliases to be sudo’ed
 alias sudo='sudo '
 
+# Protect against overwriting
+alias cp='cp -i'
+alias mv='mv -i'
+
 ###############################################################################
 # Maintenance                                                                 #
 ###############################################################################
