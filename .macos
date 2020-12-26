@@ -269,6 +269,29 @@ defaults write org.m0k.transmission BlocklistAutoUpdate -bool true
 defaults write org.m0k.transmission RandomPort -bool true
 
 ###############################################################################
+# Accessibility                                                               #
+###############################################################################
+
+# Enable Text to Speech
+defaults write com.apple.speech.synthesis.general.prefs SpokenUIUseSpeakingHotKeyFlag -bool true
+
+# Set Samantha as default speaker
+defaults write com.apple.speech.voice.prefs SelectedVoiceCreator -int 1886745202
+defaults write com.apple.speech.voice.prefs SelectedVoiceID -int 184844483
+defaults write com.apple.speech.voice.prefs SelectedVoiceName -string "Samantha"
+
+###############################################################################
+# Optimus Player and Wipr                                                     #
+###############################################################################
+
+# Automatically enter full screen and start playing videos in Optimus Player
+defaults write mo.darren.optimus.player.mac DMOPEnterFullScreenAutomaticallyOnOpen -bool true
+defaults write mo.darren.optimus.player.mac DMOPPlayAutomaticallyOnOpen -bool true
+
+# Enable automatic blacklist refresh of Wipr ad blocker
+defaults write com.giorgiocalderolla.Wipr-Mac enable_login_item -bool true
+
+###############################################################################
 # Default Applications                                                        #
 ###############################################################################
 
