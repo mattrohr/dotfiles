@@ -33,7 +33,7 @@ ln -s ${PWD}/.prompt ~/.prompt
 ln -s ${PWD}/.spectrum.zsh ~/.spectrum.zsh
 ln -s ${PWD}/.aliases ~/.aliases
 ln -s ${PWD}/.functions ~/.functions
-ln -s ${PWD}/.extra ~/.extra
+ln -s ${PWD}/.secret ~/.secret
 ln -s ${PWD}/.gitconfig ~/.gitconfig
 ln -s ${PWD}/.gitignore_global ~/.gitignore_global
 ln -s ${PWD}/.yabairc ~/.yabairc
