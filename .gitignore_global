@@ -19,9 +19,6 @@ venv
 # Windows compiled executable
 *.exe
 
-# Primitive (i.e. MS-DOS) compiled binary executable similar to *.exe, but execute smaller instruction set
-*.com
-
 # Windows dynamic link library, shared among programs
 *.dll
 
