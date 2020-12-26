@@ -1,28 +1,53 @@
-# Compiled source files
-*.com
-*.class
-*.dll
-*.exe
-*.o
-*.so
+###############################################################################
+# Source code	                                                              #
+###############################################################################
+# Compiled Python source code
 *.pyc
+
+# Python virtual environments
 venv
 
-# Folder view configuration files
+# Compiled C source code; 'object file'
+*.o
+
+# Compiled C source code; 'shared object file'
+*.so
+
+# Compiled Java source code
+*.class
+
+# Windows compiled executable
+*.exe
+
+# Primitive (i.e. MS-DOS) compiled binary executable similar to *.exe, but execute smaller instruction set
+*.com
+
+# Windows dynamic link library, shared among programs
+*.dll
+
+###############################################################################
+# OS-generated files                                                          #
+###############################################################################
+# macOS file that stores folder-specific settings (e.g. position of icons or the background image)
 .DS_Store
-.DS_Store?
+
+# Windows file that stores folder attributes (e.g. position of icons or the background image)
 Desktop.ini
 
-# Thumbnail cache files
-._*
+# Windows cache of thumbnail pictures in the folder, so they're faster to view after opening the folder
 Thumbs.db
-ehthumbs.db
 
-# Files that might appear on external disks
+# Deprecated macOS file that stores resource fork for data fork sibling. Example: ._IMG_5017.png stores shape of windows for IMG_5017.png
+._* # Deprecated hidden macOS file that stores resource fork for data fork sibling. Example: ._IMG_5017.png stores shape of windows for IMG_5017.png
+
+# macOS file where Spotlight stores indexing data
 .Spotlight-V100
+
+# macOS folder that stores files marked for deletion but have not yet been deleted
 .Trashes
-.TemporaryItems
-.DocumentRevisions-V100
-.fseventsd
+
+# macOS thumbnail image for mounted drive
 .VolumeIcon.icns
+
+# macOS file that prevents Time Machine from asking if a external disk should be used as a backup drive
 .com.apple.timemachine.donotpresent
