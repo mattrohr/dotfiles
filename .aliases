@@ -1,8 +1,8 @@
 #!/usr/bin/env zsh
 
-#############################################
-# Search									#
-#############################################
+###############################################################################
+# Search                                                                      #
+###############################################################################
 
 # Colorize all 'ls' output for readability
 alias ls='ls -G'
@@ -12,9 +12,9 @@ alias ll='ls -alrh' # for "low-level" navigation, separating dot config files
 alias lt='ls -alrht' # for "high-level" navigation, listing by recency
 alias l='ls'
 
-#############################################
-# Navigation								#
-#############################################
+###############################################################################
+# Navigation                                                                  #
+###############################################################################
 
 # Print each PATH entry on a separate line
 alias path='echo -e ${PATH//:/\\n}'
@@ -33,16 +33,16 @@ alias cdgr='cd "$(git root)"'
 # Tree listing of depth 3
 alias treee='tree -L 3'
 
-#############################################
-# Edit										#
-#############################################
+###############################################################################
+# Edit                                                                        #
+###############################################################################
 
 # Enable aliases to be sudo’ed
 alias sudo='sudo '
 
-#############################################
-# Maintenance								#
-#############################################
+###############################################################################
+# Maintenance                                                                 #
+###############################################################################
 
 # Get macOS Software Updates, Homebrew, and their installed packages
 alias update="sudo softwareupdate -i -a; brew update; brew outdated; mas upgrade; brew upgrade; brew cleanup -s --prune=0; pip3 install --upgrade pip; tldr --update"
@@ -50,9 +50,9 @@ alias update="sudo softwareupdate -i -a; brew update; brew outdated; mas upgrade
 # Recursively delete `.DS_Store` files
 alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
 
-#############################################
-# Network									#
-#############################################
+###############################################################################
+# Network                                                                     #
+###############################################################################
 
 # print local, public, reserved, and link-local IP addresses
 alias ips="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[0-9]\+\)\|[a-fA-F0-9:]\+\)' | awk '{ sub(/inet6? (addr:)? ?/, \"\"); print }'"

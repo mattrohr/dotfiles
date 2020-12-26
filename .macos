@@ -138,12 +138,12 @@ sudo chflags nohidden /Volumes
 # Expand the following File Info panes:
 # “General”, “Open with”, and “Sharing & Permissions”
 defaults write com.apple.finder FXInfoPanesExpanded -dict \
-	General -bool true \
-	OpenWith -bool true \
-	Privileges -bool true
+    General -bool true \
+    OpenWith -bool true \
+    Privileges -bool true
 
 ###############################################################################
-# Dock, Dashboard, and hot corners                                            #
+# Dock, Dashboard, hot corners                                                #
 ###############################################################################
 
 # Enable highlight hover effect for the grid view of a stack (Dock)
@@ -176,7 +176,7 @@ defaults write com.apple.dock autohide-time-modifier -float 0
 defaults write com.apple.dock autohide -bool true
 
 ###############################################################################
-# Safari & WebKit                                                             #
+# Safari, Webkit                                                              #
 ###############################################################################
 
 # Privacy: don’t send search queries to Apple
@@ -254,7 +254,7 @@ defaults write com.apple.Safari InstallExtensionUpdatesAutomatically -bool true
 defaults write com.apple.mail AddressesIncludeNameOnPasteboard -bool false
 
 ###############################################################################
-# Terminal                                                        #
+# Terminal                                                                    #
 ###############################################################################
 
 # Add TouchID authentication to Sudo
@@ -372,7 +372,7 @@ defaults write com.google.Chrome PMPrintingExpandedStateForPrint2 -bool true
 defaults write com.google.Chrome.canary PMPrintingExpandedStateForPrint2 -bool true
 
 ###############################################################################
-# Transmission.app                                                            #
+# Transmission                                                                #
 ###############################################################################
 
 # Use `~/Documents/Torrents` to store incomplete downloads
@@ -410,27 +410,27 @@ defaults write org.m0k.transmission RandomPort -bool true
 ###############################################################################
 
 for app in "Activity Monitor" \
-	"Address Book" \
-	"Calendar" \
-	"cfprefsd" \
-	"Contacts" \
-	"Dock" \
-	"Finder" \
-	"Google Chrome Canary" \
-	"Google Chrome" \
-	"Mail" \
-	"Messages" \
-	"Opera" \
-	"Photos" \
-	"Safari" \
-	"SizeUp" \
-	"Spectacle" \
-	"SystemUIServer" \
-	"Terminal" \
-	"Transmission" \
-	"Tweetbot" \
-	"Twitter" \
-	"iCal"; do
-	killall "${app}" &> /dev/null
+    "Address Book" \
+    "Calendar" \
+    "cfprefsd" \
+    "Contacts" \
+    "Dock" \
+    "Finder" \
+    "Google Chrome Canary" \
+    "Google Chrome" \
+    "Mail" \
+    "Messages" \
+    "Opera" \
+    "Photos" \
+    "Safari" \
+    "SizeUp" \
+    "Spectacle" \
+    "SystemUIServer" \
+    "Terminal" \
+    "Transmission" \
+    "Tweetbot" \
+    "Twitter" \
+    "iCal"; do
+    killall "${app}" &> /dev/null
 done
 echo "Done. Note that some of these changes require a logout/restart to take effect."

@@ -1,42 +1,51 @@
 [user]
-	name = Matt Rohr
-	email = 67395122+mattrohr@users.noreply.github.com
-	# public key, available for viewing on signed commits
-	signingkey = C6C3DD2A201ED90B
+    name = Matt Rohr
+    email = 67395122+mattrohr@users.noreply.github.com
+    
+    # public key, available for viewing on signed commits
+    signingkey = C6C3DD2A201ED90B
 [push]
-	# Works like upstream, but with an added safety feature: refuses to push if the upstream branch’s name is different from the local one
-	default = simple
+    # Works like upstream, but with an added safety feature: refuses to push if the upstream branch’s name is different from the local one
+    default = simple
 [core]
-	# Specifies global files to ignore, in addition to any local .gitignore
-	excludesfile = ~/.gitignore_global
-	# Specifies editor of choice, and wait for to editor to exit before proceeding
-	editor = 'nova' --wait
+    # Specifies global files to ignore, in addition to any local .gitignore
+    excludesfile = ~/.gitignore_global
+    
+    # Specifies editor of choice, and wait for to editor to exit before proceeding
+    editor = 'nova' --wait
 [alias]
-	one = log --oneline
-	last = log -1 HEAD
-	graph = log --all --graph --pretty=format:'%C(auto)%h%C(auto)%d %s %C(dim)(%aN, %ar)' 
-	# Shows all branches, even acrocdss remotes
-	branches = branch -a --color -v
-	unstage = reset HEAD --
-	# Searches commits by commit message
-	search = "!f() { git log --pretty=format:'%C(yellow)%h  %Cblue%ad  %Creset%s%Cgreen  [%cn] %Cred%d' --decorate --date=short --grep=$1; }; f"
-	showdifftool = ! "st() { if [ -z $1 ]; then c='HEAD'; else c=$1; fi; git difftool $c~..$c; }; st"
-	# Combines with ~/.aliases 'cdgr' command to change directory to repository root
-	root = rev-parse --show-toplevel
-	# Shows developer contributions
-	count = ! "echo "Commits:" && git shortlog -sn && echo "Lines:" && lc() { git ls-tree --name-only -z -r HEAD | xargs -0 -n1 git diff --no-index --numstat /dev/null 2>/dev/null | grep -v '^-' | cut -f 3- | cut -d ' ' -f 3- | xargs -n1 git blame --line-porcelain | grep '^author ' | cut -d ' ' -f 2- | sort | uniq -c | sort -nr; }; lc"
-	# May be run multiple times to credit several co-authors
-	# usage example: git credit "Linus Torvalds" linus@devnull.com
-	credit = "!f() { \
-		if [ -n \"$1\" ] && [ -n \"$2\" ]; then \
-			GIT_EDITOR=\"git interpret-trailers --in-place --trailer='Co-authored-by: $1 <$2>'\" git commit --amend; \
-		fi \
-	}; f"
+    one = log --oneline
+    last = log -1 HEAD
+    graph = log --all --graph --pretty=format:'%C(auto)%h%C(auto)%d %s %C(dim)(%aN, %ar)' 
+    
+    # Shows all branches, even acrocdss remotes
+    branches = branch -a --color -v
+    
+    unstage = reset HEAD --
+    
+    # Searches commits by commit message
+    search = "!f() { git log --pretty=format:'%C(yellow)%h  %Cblue%ad  %Creset%s%Cgreen  [%cn] %Cred%d' --decorate --date=short --grep=$1; }; f"
+    
+    showdifftool = ! "st() { if [ -z $1 ]; then c='HEAD'; else c=$1; fi; git difftool $c~..$c; }; st"
+    
+    # Combines with ~/.aliases 'cdgr' command to change directory to repository root
+    root = rev-parse --show-toplevel
+    
+    # Shows developer contributions
+    count = ! "echo "Commits:" && git shortlog -sn && echo "Lines:" && lc() { git ls-tree --name-only -z -r HEAD | xargs -0 -n1 git diff --no-index --numstat /dev/null 2>/dev/null | grep -v '^-' | cut -f 3- | cut -d ' ' -f 3- | xargs -n1 git blame --line-porcelain | grep '^author ' | cut -d ' ' -f 2- | sort | uniq -c | sort -nr; }; lc"
+    
+    # May be run multiple times to credit several co-authors
+    # usage example: git credit "Linus Torvalds" linus@devnull.com
+    credit = "!f() { \
+        if [ -n \"$1\" ] && [ -n \"$2\" ]; then \
+            GIT_EDITOR=\"git interpret-trailers --in-place --trailer='Co-authored-by: $1 <$2>'\" git commit --amend; \
+        fi \
+    }; f"
 [color]
-	ui = auto	
+    ui = auto    
 [commit]
-	# Signs all commits automatically without need for -s flag
-	gpgsign = true
+    # Signs all commits automatically without need for -s flag
+    gpgsign = true
 [credential]
-	# Caches personal access token for cloning, pulling, and committing over HTTPS
-	helper = osxkeychain
+    # Caches personal access token for cloning, pulling, and committing over HTTPS
+    helper = osxkeychain

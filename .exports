@@ -1,9 +1,9 @@
 #!/usr/bin/env zsh
 
-export VISUAL='nova'; # Default to editing with nova, when available 
+export VISUAL='nova';                     # Default to editing with nova, when available 
 export EDITOR=$VISUAL;
 
-export MANPAGER='less -X'; # Don’t clear the screen after quitting a manual page.
+export MANPAGER='less -X';                # Don’t clear the screen after quitting a manual page.
 
 # Colorize man pages
 export LESS_TERMCAP_md=$'\e[01;38;5;74m'  # color default bold headers light blue
@@ -12,9 +12,9 @@ export LESS_TERMCAP_us=$'\e[04;38;5;146m' # color default underlined arguments l
 export LESS_TERMCAP_ue=$'\e[0m'           # end underlining
 
 export HISTFILE=~/.zsh_history;
-export HISTSIZE=5000; # Maximum commands saved in memory saved to history. Default is 500
-export SAVEHIST=${HISTSIZE}; # Maximum commands saved in $HISTFILE
-setopt INC_APPEND_HISTORY # adds commands as they are typed, not only at shell exit
+export HISTSIZE=5000;                     # Maximum commands saved in memory saved to history. Default is 500
+export SAVEHIST=${HISTSIZE};              # Maximum commands saved in $HISTFILE
+setopt INC_APPEND_HISTORY                 # adds commands as they are typed, not only at shell exit
 
 # Avoid issues with `gpg` installed by Homebrew
 # https://stackoverflow.com/a/42265848/96656

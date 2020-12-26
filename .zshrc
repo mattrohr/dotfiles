@@ -1,13 +1,13 @@
 # Load the shell dotfiles, and then some:
 # * ~/.extra can be used for other settings not committed to GitHub.
 for file in ~/.{prompt,aliases,functions,extra,exports}; do
-	[ -r "$file" ] && [ -f "$file" ] && source "$file";
+    [ -r "$file" ] && [ -f "$file" ] && source "$file";
 done;
 unset file;
 
-#############################################
-# Packages            							    		#
-#############################################
+###############################################################################
+# Packages                                                                #
+###############################################################################
 
 # Set shell python as global pyenv version, unless overridden with local pyenv version
 if command -v pyenv 1>/dev/null 2>&1; then
@@ -20,9 +20,9 @@ source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # example usage: 'ls -f' describes available flags, and interactively cycles through them with subsequent tabs
 if type brew &>/dev/null; then
-  FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
-  autoload -Uz compinit
-  compinit
+    FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+    autoload -Uz compinit
+    compinit
 fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

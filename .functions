@@ -1,106 +1,97 @@
 #!/usr/bin/env zsh
 
-#############################################
-# Search									#
-#############################################
-
-# Search command history interactively
-h() {
-	print -z $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | sed 's/ *[0-9]* *//')
-}
-
-#############################################
-# Navigation								#
-#############################################
+###############################################################################
+# Navigation                                                                  #
+###############################################################################
 
 # `o` with no arguments opens the current directory in Finder, otherwise opens the given location
 o() {
-	if [ $# -eq 0 ]; then
-		open .;
-	else
-		open "$@";
-	fi;
+    if [ $# -eq 0 ]; then
+        open .;
+    else
+        open "$@";
+    fi;
 }
 
 # Create a new directory and enter it
 mcd() {
-	mkdir "${1}" && cd "${1}"
+    mkdir "${1}" && cd "${1}"
 }
 
 # Change working directory to the top-most Finder window location
 cdf() {
-	cd "$(osascript -e 'tell app "Finder" to POSIX path of (insertion location as alias)')";
+    cd "$(osascript -e 'tell app "Finder" to POSIX path of (insertion location as alias)')";
 }
 
 # Go up [n] directories
 up()
 {
-	local cdir="$(pwd)"
-	if [[ "${1}" == "" ]]; then
-		cdir="$(dirname "${cdir}")"
-	elif ! [[ "${1}" =~ ^[0-9]+$ ]]; then
-		echo "Error: argument must be a number"
-	elif ! [[ "${1}" -gt "0" ]]; then
-		echo "Error: argument must be positive"
-	else
-		for ((i=0; i<${1}; i++)); do
-			local ncdir="$(dirname "${cdir}")"
-			if [[ "${cdir}" == "${ncdir}" ]]; then
-				break
-			else
-				cdir="${ncdir}"
-			fi
-		done
-	fi
-	cd "${cdir}"
+    local cdir="$(pwd)"
+    if [[ "${1}" == "" ]]; then
+        cdir="$(dirname "${cdir}")"
+    elif ! [[ "${1}" =~ ^[0-9]+$ ]]; then
+        echo "Error: argument must be a number"
+    elif ! [[ "${1}" -gt "0" ]]; then
+        echo "Error: argument must be positive"
+    else
+        for ((i=0; i<${1}; i++)); do
+            local ncdir="$(dirname "${cdir}")"
+            if [[ "${cdir}" == "${ncdir}" ]]; then
+                break
+            else
+                cdir="${ncdir}"
+            fi
+        done
+    fi
+    cd "${cdir}"
 }
 
-#############################################
-# Edit										#
-#############################################
+###############################################################################
+# Edit                                                                        #
+###############################################################################
 
 # `n` with no arguments or opens the current directory in Nova editor, otherwise opens the given file or directory
 n() {
-	if [ $# -eq 0 ]; then
-		nova .;
-	else
-		nova "$@";
-	fi;
+    if [ $# -eq 0 ]; then
+        nova .;
+    else
+        nova "$@";
+    fi;
 }
 
 # `vs` with no arguments opens the current directory in Visual Studio Code editor, otherwise opens the given file or directory
 vs() {
-	if [ $# -eq 0 ]; then
-		code .;
-	else
-		code "$@";
-	fi;
+    if [ $# -eq 0 ]; then
+        code .;
+    else
+        code "$@";
+    fi;
 }
 
 # Check if a file contains non-ascii characters
 nonascii() {
-	LC_ALL=C grep -n '[^[:print:][:space:]]' "${1}"
+    LC_ALL=C grep -n '[^[:print:][:space:]]' "${1}"
 }
 
-#############################################
-# General Utility							#
-#############################################
+###############################################################################
+# General Utility                                                             #
+###############################################################################
 
 youtube-song() {
-	youtube-dl --audio-format m4a -x "$@"
+    youtube-dl --audio-format m4a -x "$@"
 }
 
 # Notify after terminal completion with optional user-defined message 
 # usage example: >> brew install mactex && notify "Mactex installed"
 notify() {
-	echo "$1" | terminal-notifier -sound default
+    echo "$1" | terminal-notifier -sound default
 }
 
-#############################################
-# Network									#
-#############################################
+###############################################################################
+# Network                                                                     #
+###############################################################################
 
 # Serve current directory
 serve() {
-	ruby -run -e httpd . -p "${1:-8080}"
+    ruby -run -e httpd . -p "${1:-8080}"
 }
