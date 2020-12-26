@@ -10,8 +10,8 @@ else # macOS `ls`
     colorflag="-G"
 fi
 
-alias ll='ls -alrh' # for "low-level" navigation, separating dot config files
-alias lt='ls -alrht' # for "high-level" navigation, listing by recency
+alias ll='ls -alrh ${colorflag}' # for "low-level" navigation, separating dot config files
+alias lt='ls -alrht ${colorflag}' # for "high-level" navigation, listing by recency
 
 ###############################################################################
 # Navigation                                                                  #
