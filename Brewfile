@@ -4,11 +4,15 @@ tap "homebrew/cask-drivers"
 tap "homebrew/cask-versions"
 tap "homebrew/core"
 tap "homebrew/services"
+tap "koekeishiya/formulae"                   # allow tiling window manager installation (i.e. yabai and skhd)
+
 
 ###############################################################################
 # Command-Line Tools                                                          #
 ###############################################################################
 
+brew "skhd"                                  # manipulate yabai with keyboard
+brew "yabai"                                 # tiling window management
 brew "libtool"                               # common dependency
 brew "pkg-config"                            # common dependency
 brew "icu4c"                                 # common dependency
