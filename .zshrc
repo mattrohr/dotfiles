@@ -5,6 +5,9 @@ for file in ~/.{prompt,aliases,functions,extra,exports}; do
 done;
 unset file;
 
+# Initialize fasd for navigating directories
+eval "$(fasd --init auto)"
+
 ###############################################################################
 # Packages                                                                #
 ###############################################################################

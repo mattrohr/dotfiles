@@ -5,7 +5,7 @@ tap "homebrew/cask-versions"
 tap "homebrew/core"
 tap "homebrew/services"
 tap "koekeishiya/formulae"                   # allow tiling window manager installation (i.e. yabai and skhd)
-
+0-
 
 ###############################################################################
 # Command-Line Tools                                                          #
@@ -49,6 +49,7 @@ brew "jdupes"                                # duplicate file finder and an enha
 brew "docker"                                # docker containers
 brew "exiftool"                              # reading and writing metadata
 brew "fzf"                                   # fuzzy finder
+brew "fasd"									 # Google's "I'm Feeling Lucky" but for cd, based on frequently- and recently-accesed directories
 brew "fd"                                    # 'find' alternative with intuitive sytnax, colorized output, default regex matching, Unicode support
 brew "ripgrep"                               # 'grep' complement that can ignore .gitignore folders, uses multiple CPUs, though less portable 
 brew "tldr"                                  # 'man' complement with command examples, though less verbose and extensive

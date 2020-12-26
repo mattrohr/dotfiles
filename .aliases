@@ -19,14 +19,6 @@ alias l='ls'
 # Print each PATH entry on a separate line
 alias path='echo -e ${PATH//:/\\n}'
 
-# Common Directories
-## AUTO_CD with aliased, global directories allows both 'cd'ing into them and passing them as arguments into commands like 'mv' 
-setopt AUTO_CD
-alias -g ic="~/Library/Mobile\ Documents/com~apple~CloudDocs"
-alias -g dl="~/Downloads"
-alias -g dt="~/Desktop"
-alias -g p="~/Library/Mobile\ Documents/com~apple~CloudDocs/Projects"
-
 # Combines with ~/.gitconfig 'root' command to change directory to repository root
 alias cdgr='cd "$(git root)"'
 
