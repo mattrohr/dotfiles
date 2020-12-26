@@ -42,5 +42,7 @@ ln -s ${PWD}/.hushlogin ~/.hushlogin
 rm -rf $HOME/.zshrc
 ln -s ${PWD}/.zshrc ~/.zshrc
 
+echo "Done. Some changes require a restart to take effect."
+
 # restart shell so path changes take effect.
 exec $SHELL

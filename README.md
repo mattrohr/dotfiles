@@ -1,11 +1,11 @@
 <p align="center">
-<img width="75%" src="https://i.imgur.com/VPkVbH1.png" alt="Banner">
+    <img width="75%" src="https://i.imgur.com/d0hGgVI.png" alt="Banner">
 </p>
 
 <p align="center">
-<a href="https://github.com/mattrohr/dotfiles/workflows/CI/badge.svg">
-<img src="https://github.com/mattrohr/dotfiles/workflows/CI/badge.svg" alt="CI Status Badge">
-</a>
+    <a href="https://github.com/mattrohr/dotfiles/actions?query=workflow%3ACI">
+        <img src="https://github.com/mattrohr/dotfiles/workflows/CI/badge.svg?branch=main" alt="CI Status Badge">
+  </a>
 </p>
 
 ## About
