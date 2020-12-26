@@ -32,7 +32,6 @@ ln -s ${PWD} ~
 ln -s ${PWD}/.prompt ~/.prompt
 ln -s ${PWD}/.spectrum.zsh ~/.spectrum.zsh
 ln -s ${PWD}/.aliases ~/.aliases
-ln -s ${PWD}/.exports ~/.exports
 ln -s ${PWD}/.functions ~/.functions
 ln -s ${PWD}/.extra ~/.extra
 ln -s ${PWD}/.gitconfig ~/.gitconfig
