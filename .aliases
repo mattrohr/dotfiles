@@ -3,14 +3,15 @@
 ###############################################################################
 # Search                                                                      #
 ###############################################################################
+# Detect which `ls` flavor is in use and colorize for readability
+if ls --color > /dev/null 2>&1; then # GNU `ls`
+    colorflag="--color"
+else # macOS `ls`
+    colorflag="-G"
+fi
 
-# Colorize all 'ls' output for readability
-alias ls='ls -G'
-
-# Common content listings
 alias ll='ls -alrh' # for "low-level" navigation, separating dot config files
 alias lt='ls -alrht' # for "high-level" navigation, listing by recency
-alias l='ls'
 
 ###############################################################################
 # Navigation                                                                  #
@@ -19,10 +20,10 @@ alias l='ls'
 # Print each PATH entry on a separate line
 alias path='echo -e ${PATH//:/\\n}'
 
-# Combines with ~/.gitconfig 'root' command to change directory to repository root
+# Combine with ~/.gitconfig `root` command to change directory to repository root
 alias cdgr='cd "$(git root)"'
 
-# Tree listing of depth 3
+# Display current directory structure with child depth 3
 alias treee='tree -L 3'
 
 ###############################################################################
@@ -40,18 +41,22 @@ alias mv='mv -i'
 # Maintenance                                                                 #
 ###############################################################################
 
-# Get macOS Software Updates, Homebrew, and their installed packages
-alias update="sudo softwareupdate -i -a; brew update; brew outdated; mas upgrade; brew upgrade; brew cleanup -s --prune=0; pip3 install --upgrade pip; tldr --update"
+# Update macOS software, Homebrew, and Homebrew packages
+alias update="sudo softwareupdate -i -a; brew update; brew outdated; mas upgrade; brew upgrade; brew cleanup -s --prune=0; tldr --update"
 
-# Recursively delete `.DS_Store` files
+# Recursively delete .DS_Store files
 alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
+
+#################################################################################
+# General Utility                                                               #
+#################################################################################
+
+# Mirror stdout to stderr, useful for seeing data going through a pipe
+alias peek='tee >(cat 1>&2)'
 
 ###############################################################################
 # Network                                                                     #
 ###############################################################################
-
-# print local, public, reserved, and link-local IP addresses
-alias ips="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[0-9]\+\)\|[a-fA-F0-9:]\+\)' | awk '{ sub(/inet6? (addr:)? ?/, \"\"); print }'"
 
 # Show active network interfaces
 alias ifactive="ifconfig | pcregrep -M -o '^[^\t:]+:([^\n]|\n\t)*status: active'"
@@ -59,8 +64,5 @@ alias ifactive="ifconfig | pcregrep -M -o '^[^\t:]+:([^\n]|\n\t)*status: active'
 # Mirror a website
 alias mirror='wget -m -k -K -E -e robots=off'
 
-# Disable certificate check for wget
-alias wget='wget --no-check-certificate'
-
 # Blacklist servers
-alias block='sudo nano /etc/hosts'
+alias block='sudo $VISUAL /etc/hosts'

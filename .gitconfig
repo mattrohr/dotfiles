@@ -1,51 +1,53 @@
 [user]
     name = Matt Rohr
     email = 67395122+mattrohr@users.noreply.github.com
-    
-    # public key, available for viewing on signed commits
+
+    # Public key, available for viewing on signed commits
     signingkey = C6C3DD2A201ED90B
 [push]
-    # Works like upstream, but with an added safety feature: refuses to push if the upstream branch’s name is different from the local one
+    # Add safety features to upstream option (i.e. refuse to push if the upstream branch’s name is different from the local one)
     default = simple
 [core]
-    # Specifies global files to ignore, in addition to any local .gitignore
+    # Specify global files to ignore, in addition to any local .gitignore
     excludesfile = ~/.gitignore_global
-    
-    # Specifies editor of choice, and wait for to editor to exit before proceeding
+
+    # Specify editor of choice, and wait for editor to exit before proceeding
     editor = 'nova' --wait
 [alias]
-    one = log --oneline
+    one = log --all --oneline --pretty=format:'%C(auto)%h %s %C(dim)(%aN, %ar) %C(auto)%d'
     last = log -1 HEAD
-    graph = log --all --graph --pretty=format:'%C(auto)%h%C(auto)%d %s %C(dim)(%aN, %ar)' 
-    
-    # Shows all branches, even acrocdss remotes
+    graph = log --all --graph --pretty=format:'%C(auto)%h %s %C(dim)(%aN, %ar) %C(auto)%d'
+
+    # Show all branches, even across remotes
     branches = branch -a --color -v
-    
-    unstage = reset HEAD --
-    
-    # Searches commits by commit message
-    search = "!f() { git log --pretty=format:'%C(yellow)%h  %Cblue%ad  %Creset%s%Cgreen  [%cn] %Cred%d' --decorate --date=short --grep=$1; }; f"
-    
-    showdifftool = ! "st() { if [ -z $1 ]; then c='HEAD'; else c=$1; fi; git difftool $c~..$c; }; st"
-    
-    # Combines with ~/.aliases 'cdgr' command to change directory to repository root
+
+    # Search commits by commit message
+    search = "!f() { git log --pretty=format:'%C(auto)%h %s %C(dim)(%aN, %ar) %C(auto)%d' --grep=$1; }; f"
+
+    # Combine with ~/.aliases `cdgr` to change directory to git repository root
     root = rev-parse --show-toplevel
-    
-    # Shows developer contributions
+
+    # Show developer contributions
     count = ! "echo "Commits:" && git shortlog -sn && echo "Lines:" && lc() { git ls-tree --name-only -z -r HEAD | xargs -0 -n1 git diff --no-index --numstat /dev/null 2>/dev/null | grep -v '^-' | cut -f 3- | cut -d ' ' -f 3- | xargs -n1 git blame --line-porcelain | grep '^author ' | cut -d ' ' -f 2- | sort | uniq -c | sort -nr; }; lc"
-    
-    # May be run multiple times to credit several co-authors
-    # usage example: git credit "Linus Torvalds" linus@devnull.com
+
+    # Acknowledge co-author(s)
+    # Example: `git credit "Linus Torvalds" linus@devnull.com`
     credit = "!f() { \
         if [ -n \"$1\" ] && [ -n \"$2\" ]; then \
-            GIT_EDITOR=\"git interpret-trailers --in-place --trailer='Co-authored-by: $1 <$2>'\" git commit --amend; \
-        fi \
+           GIT_EDITOR=\"git interpret-trailers --in-place --trailer='Co-authored-by: $1 <$2>'\" git commit --amend; \
+           fi \
     }; f"
 [color]
     ui = auto    
 [commit]
-    # Signs all commits automatically without need for -s flag
+    # Sign all commits automatically without need for -s flag
     gpgsign = true
 [credential]
-    # Caches personal access token for cloning, pulling, and committing over HTTPS
+    # Cache personal access token for cloning, pulling, and committing over HTTPS
     helper = osxkeychain
+[pull]
+    ff = only
+[gpg]
+    program = gpg
+[diff]
+    tool = vimdiff

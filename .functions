@@ -1,10 +1,10 @@
 #!/usr/bin/env zsh
 
-###############################################################################
-# Navigation                                                                  #
-###############################################################################
+#################################################################################
+# Navigation                                                                    #
+#################################################################################
 
-# `o` with no arguments opens the current directory in Finder, otherwise opens the given location
+# `o` with no arguments opens the current directory in Finder, otherwise opens the given file or directory
 o() {
     if [ $# -eq 0 ]; then
         open .;
@@ -13,8 +13,8 @@ o() {
     fi;
 }
 
-# Create a new directory and enter it
-mcd() {
+# Create a new directory then enter it
+mkcd() {
     mkdir "${1}" && cd "${1}"
 }
 
@@ -46,9 +46,9 @@ up()
     cd "${cdir}"
 }
 
-###############################################################################
-# Edit                                                                        #
-###############################################################################
+#################################################################################
+# Edit                                                                          #
+#################################################################################
 
 # `n` with no arguments or opens the current directory in Nova editor, otherwise opens the given file or directory
 n() {
@@ -59,7 +59,7 @@ n() {
     fi;
 }
 
-# `vs` with no arguments opens the current directory in Visual Studio Code editor, otherwise opens the given file or directory
+# `v` with no arguments opens the current directory in Visual Studio Code editor, otherwise opens the given file or directory
 vs() {
     if [ $# -eq 0 ]; then
         code .;
@@ -73,25 +73,25 @@ nonascii() {
     LC_ALL=C grep -n '[^[:print:][:space:]]' "${1}"
 }
 
-###############################################################################
-# General Utility                                                             #
-###############################################################################
+#################################################################################
+# General Utility                                                               #
+#################################################################################
 
 youtube-song() {
     youtube-dl --audio-format m4a -x "$@"
 }
 
-# Notify after terminal completion with optional user-defined message 
-# usage example: >> brew install mactex && notify "Mactex installed"
+# Notify after terminal process completion with optional user-defined message 
+# Example: `brew install mactex && notify "Mactex installed`
 notify() {
     echo "$1" | terminal-notifier -sound default
 }
 
-###############################################################################
-# Network                                                                     #
-###############################################################################
+#################################################################################
+# Network                                                                       #
+#################################################################################
 
-# Serve current directory
+# Serve current directory on localhost
 serve() {
     ruby -run -e httpd . -p "${1:-8080}"
 }
