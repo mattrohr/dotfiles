@@ -402,6 +402,61 @@ defaults write org.m0k.transmission BlocklistAutoUpdate -bool true
 defaults write org.m0k.transmission RandomPort -bool true
 
 ###############################################################################
+# Default Applications                                                        #
+###############################################################################
+
+# Source Code
+duti -s com.panic.nova py all
+duti -s com.panic.nova rb all
+duti -s com.panic.nova c all
+duti -s com.panic.nova cpp all
+duti -s com.panic.nova h all
+duti -s com.panic.nova go all
+duti -s com.panic.nova rs all
+duti -s com.panic.nova sh all
+duti -s com.mathworks.matlab m all
+
+# Data Structure
+duti -s com.panic.nova json all
+
+# Config
+duti -s com.panic.nova yml all
+duti -s com.panic.nova toml all
+
+# FPGA
+duti -s com.panic.nova v all
+duti -s com.panic.nova vhd all
+duti -s com.panic.nova do all
+
+# Web
+duti -s com.panic.nova js all
+duti -s com.panic.nova css all
+duti -s com.panic.nova html all
+
+# Note
+duti -s com.panic.nova md all
+duti -s com.panic.nova txt all
+
+# Video
+duti -s mo.darren.optimus.player.mac mp4 all 
+duti -s mo.darren.optimus.player.mac mkv all
+duti -s mo.darren.optimus.player.mac m4v all
+duti -s mo.darren.optimus.player.mac webm all
+duti -s mo.darren.optimus.player.mac avi all
+duti -s mo.darren.optimus.player.mac mov all
+duti -s mo.darren.optimus.player.mac gif all
+
+# Audio
+duti -s mo.darren.optimus.player.mac mp3 all
+duti -s mo.darren.optimus.player.mac flac all
+duti -s mo.darren.optimus.player.mac m4a all
+duti -s mo.darren.optimus.player.mac aac all
+duti -s mo.darren.optimus.player.mac ogg all
+
+# Documents without file extension (e.g. .gitignore and .aliases)
+duti -s com.panic.nova Document all   
+
+###############################################################################
 # Kill affected applications                                                  #
 ###############################################################################
 
