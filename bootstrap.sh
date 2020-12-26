@@ -14,9 +14,6 @@ brew bundle
 # Configure macOS settings
 ./.macos
 
-# Configure Python environment
-./.python
-
 # Configure shell
 ln -s ${PWD} ~
 ln -s ${PWD}/.prompt ~/.prompt

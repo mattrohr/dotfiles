@@ -9,11 +9,6 @@ unset file;
 # Packages                                                                #
 ###############################################################################
 
-# Set shell python as global pyenv version, unless overridden with local pyenv version
-if command -v pyenv 1>/dev/null 2>&1; then
-  eval "$(pyenv init -)"
-fi
-
 source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

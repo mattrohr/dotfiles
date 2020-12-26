@@ -61,8 +61,6 @@ brew "wget"                                  # internet file retriever
 brew "write-good"                            # flag English prose errors and suspicious constructs
 brew "jq"                                    # write queries over JSON documents, for data wrangling
 brew "pup"                                   # write queries over HTML documents, for data wrangling
-brew "pyenv"                                 # Python version management, allows projects which need different python versions
-brew "poetry"                                # Python dependency management, allows projects which need different python package versions...allegedly simplier pip and virtualenv stopgap
 brew "arduino-cli"                           # arduino command line interface
 brew "mas"                                   # mac app store commmand-line interface
 brew "pinentry-mac"                          # used for automatic git commit signing

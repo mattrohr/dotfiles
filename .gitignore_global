@@ -6,6 +6,7 @@
 *.o
 *.so
 *.pyc
+venv
 
 # Folder view configuration files
 .DS_Store
