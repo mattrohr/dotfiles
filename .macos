@@ -67,6 +67,10 @@ defaults write com.apple.sidecar.display doubleTapEnabled -bool true
 # Remove Siri from Touchbar control strip
 defaults write ~/Library/Preferences/com.apple.controlstrip MiniCustomized '(com.apple.system.brightness, com.apple.system.volume , com.apple.system.mute)' 
 
+# Set a fast keyboard repeat rate
+defaults write -g InitialKeyRepeat -int 15 # normal minimum is 15 (225 ms)
+defaults write -g KeyRepeat -int 2 # normal minimum is 2 (30 ms)
+
 ###############################################################################
 # Screen                                                                      #
 ###############################################################################
