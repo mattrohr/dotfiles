@@ -74,9 +74,6 @@ defaults write ~/Library/Preferences/com.apple.controlstrip MiniCustomized '(com
 # Save screenshots in PNG format (other options: BMP, GIF, JPG, PDF, TIFF)
 defaults write com.apple.screencapture type -string "png"
 
-# Disable screenshot shadows
-defaults write com.apple.screencapture disable-shadow -bool true
-
 ###############################################################################
 # Finder                                                                      #
 ###############################################################################
