@@ -3,7 +3,7 @@
 # Ask for the administrator password upfront
 sudo -v
 
-# update existing `sudo` time stamp until finished
+# Update existing `sudo` time stamp until finished
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 if [ $(uname -s) = 'Darwin' ]; then
@@ -16,10 +16,10 @@ if [ $(uname -s) = 'Darwin' ]; then
     brew bundle
 
     # Allow window manager (i.e. yabai) to load during startup
-    echo "$USER ALL = (root) NOPASSWD: "$(which yabai)" --load-sa" | sudo tee -a /private/etc/sudoers.d/yabai2
+    echo "$USER ALL = (root) NOPASSWD: "$(which yabai)" --load-sa" | sudo tee -a /private/etc/sudoers.d/yabai
 
     # Configure macOS settings
-    source .macOS
+    source .macos
 elif [ $(uname -s) = 'Linux' ]; then
     echo "Setting up your Linux machine..."
 else
@@ -27,7 +27,7 @@ else
     exit 1
 fi
 
-# Configure shell
+# Link shell configurations to home directory
 ln -s ${PWD} ~
 ln -s ${PWD}/.prompt ~/.prompt
 ln -s ${PWD}/.spectrum.zsh ~/.spectrum.zsh
@@ -44,5 +44,5 @@ ln -s ${PWD}/.zshrc ~/.zshrc
 
 echo "Done. Some changes require a restart to take effect."
 
-# restart shell so path changes take effect.
+# Restart shell so path changes take effect.
 exec $SHELL
