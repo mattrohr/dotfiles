@@ -25,7 +25,8 @@ brew "zsh-completions"                     	 # populates available shell command
 brew "zsh-syntax-highlighting"             	 # colorizes shell commands, arguments, brackets, etc for clarity
 brew "fdupes"                              	 # identify or delete duplicate files
 brew "jdupes"                              	 # duplicate file finder and an enhanced fork of 'fdupes'
-brew "docker"                              	 # docker containers
+brew "virtualbox"                          	 # virtualize development environment 
+brew "vagrant"                          	 # automate VM management and deployment
 brew "exiftool"                            	 # reading and writing metadata
 brew "fzf"                                 	 # fuzzy finder
 brew "fasd"									 # Google's "I'm Feeling Lucky" but for cd, based on frequently- and recently-accesed directories
@@ -56,6 +57,7 @@ brew "htop"                                	 # 'top' alternative (interactive pr
 
 brew "skhd"                                  # manipulate yabai with keyboard
 brew "yabai"                                 # tiling window management
+cask "docker"                                # containerize development environment
 cask "arduino"                               # electronic prototyping
 cask "adobe-creative-cloud"                  # Illustrator+InDesign, Lightroom Classic+Photoshop, Premiere+After Effects
 cask "autodesk-fusion360"                    # mechanical computer aided design
