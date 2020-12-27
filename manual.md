@@ -15,7 +15,6 @@ brew bundle dump --file "Brewfile $(date)" && diff -u Brewfile ~/dotfiles/Brewfi
 
 ### System Preferences.app
 - Apple ID >> Disable Mail
-- Desktop & Screen Saver >> Hot Corners >> bottom right >> ⌘ >> ⌘ Desktop
 - Notifications >> Reminders >> Uncheck “Show in Notification Center” and “Badge app icon”
 - Notifications >> Do Not Disturb >> Turn on Do Not Disturb same hours as Wind Down
 - Notifications >>  Do Not Disturb >> Allow repeated calls

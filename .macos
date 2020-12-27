@@ -132,7 +132,7 @@ chflags nohidden ~/Library && xattr -d com.apple.FinderInfo ~/Library
 sudo chflags nohidden /Volumes
 
 ###############################################################################
-# Dock, Dashboard, hot corners                                                #
+# Dock and Dashboard                                                          #
 ###############################################################################
 
 # Set the icon size of Dock items
