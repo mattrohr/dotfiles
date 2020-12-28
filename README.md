@@ -19,7 +19,7 @@ These files backup, restore, and sync my system settings with ubiquitous shell s
 mkdir -p ~/Library/Mobile\ Documents/com~apple~CloudDocs/Projects && cd ~/Library/Mobile\ Documents/com~apple~CloudDocs/Projects
 ```
 
-3. Clone repository and configure machine:
+3. Clone repository (requires **git**) and configure machine:
 ```bash
 git clone https://github.com/mattrohr/dotfiles.git && cd dotfiles && source install.sh
 ```

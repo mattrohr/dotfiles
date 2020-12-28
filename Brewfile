@@ -15,41 +15,41 @@ brew "sqlite"                                # common dependency
 brew "openssl@1.1"                           # common dependency
 brew "readline"                              # common dependency
 brew "gnupg"                                 # encryption and signing
-brew "libpng"                              	 # library for manipulating PNG images
-brew "ffmpeg"                              	 # play, record, convert, and stream audio, video, images
-brew "imagemagick"                         	 # tools and libraries to manipulate images in many formats
-brew "tesseract"                           	 # optical character recognition engine
-brew "youtube-dl"                          	 # streaming content downloader including--but not exclusively--YouTube
-brew "zsh-autosuggestions"                 	 # populates remaining shell command from history
-brew "zsh-completions"                     	 # populates available shell commands
-brew "zsh-syntax-highlighting"             	 # colorizes shell commands, arguments, brackets, etc for clarity
-brew "fdupes"                              	 # identify or delete duplicate files
-brew "jdupes"                              	 # duplicate file finder and an enhanced fork of 'fdupes'
-brew "virtualbox"                          	 # virtualize development environment 
-brew "vagrant"                          	 # automate VM management and deployment
-brew "exiftool"                            	 # reading and writing metadata
-brew "fzf"                                 	 # fuzzy finder
-brew "fasd"									 # Google's "I'm Feeling Lucky" but for cd, based on frequently- and recently-accesed directories
-brew "git"                                 	 # track file changes
-brew "handbrake"                           	 # open-source video transcoder
-brew "pandoc"                              	 # swiss-army knife of text doucment format conversion
-brew "tmux"                               	 # more convenient than tiling terminal windows because you can seperate projects into sessions and quickly manipulate (e.g. zooming window panes)
-brew "tree"                                	 # directory structure mapping
-brew "watch"                               	 # execute and monitor every [n] seconds
-brew "write-good"                          	 # flag English prose errors and suspicious constructs
-brew "jq"                                  	 # query over JSON documents
-brew "pup"                                 	 # query over HTML documents
-brew "mas"                                 	 # mac app store commmand-line interface
-brew "pinentry-mac"                        	 # used for automatic git commit signing
+brew "libpng"                                # library for manipulating PNG images
+brew "ffmpeg"                                # play, record, convert, and stream audio, video, images
+brew "imagemagick"                           # tools and libraries to manipulate images in many formats
+brew "tesseract"                             # optical character recognition engine
+brew "youtube-dl"                            # streaming content downloader including--but not exclusively--YouTube
+brew "zsh-autosuggestions"                   # populates remaining shell command from history
+brew "zsh-completions"                       # populates available shell commands
+brew "zsh-syntax-highlighting"               # colorizes shell commands, arguments, brackets, etc for clarity
+brew "fdupes"                                # identify or delete duplicate files
+brew "jdupes"                                # duplicate file finder and an enhanced fork of 'fdupes'
+brew "virtualbox"                            # virtualize development environment 
+brew "vagrant"                               # automate VM management and deployment
+brew "exiftool"                              # reading and writing metadata
+brew "fzf"                                   # fuzzy finder
+brew "fasd"                                  # Google's "I'm Feeling Lucky" but for cd, based on frequently- and recently-accessed directories
+brew "git"                                   # track file changes
+brew "handbrake"                             # open-source video transcoder
+brew "pandoc"                                # swiss-army knife of text doucment format conversion
+brew "tmux"                                  # more convenient than tiling terminal windows because you can seperate projects into sessions and quickly manipulate (e.g. zooming window panes)
+brew "tree"                                  # directory structure mapping
+brew "watch"                                 # execute and monitor every [n] seconds
+brew "write-good"                            # flag English prose errors and suspicious constructs
+brew "jq"                                    # query over JSON documents
+brew "pup"                                   # query over HTML documents
+brew "mas"                                   # Mac app store commmand-line interface
+brew "pinentry-mac"                          # used for automatic git commit signing
 brew "terminal-notifier"                     # send macOS notifications from the command-line
 brew "duti"                                  # set default document and URL handlers
-brew "wget"                                	 # internet file retriever
-brew "fd"                                  	 # 'find' alternative file search that's generally faster with better defaults (e.g. syntax, color, omits .gitignore matches)
-brew "ripgrep"                             	 # 'grep' alternative string search that's generally faster with better defaults (e.g. omits .gitignore matches)
-brew "bat"                                 	 # 'cat' alternative with syntax highlights, line numbers, git intergration, and paging 
-brew "tldr"                                	 # 'man' complement with command examples
-brew "rsync"                               	 # 'cp' and 'scp' complement for large files: fast, resumable, and incremental transfer
-brew "htop"                                	 # 'top' alternative (interactive process viewer)
+brew "wget"                                  # internet file retriever
+brew "fd"                                    # 'find' alternative file search that's generally faster with better defaults (e.g. syntax, color, omits .gitignore matches)
+brew "ripgrep"                               # 'grep' alternative string search that's generally faster with better defaults (e.g. omits .gitignore matches)
+brew "bat"                                   # 'cat' alternative with syntax highlights, line numbers, git intergration, and paging 
+brew "tldr"                                  # 'man' complement with command examples
+brew "rsync"                                 # 'cp' and 'scp' complement for large files: fast, resumable, and incremental transfer
+brew "htop"                                  # 'top' alternative (interactive process viewer)
 
 ###############################################################################
 # GUI Tools                                                                   #
