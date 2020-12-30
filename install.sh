@@ -16,8 +16,9 @@ if [ $(uname -s) = 'Darwin' ]; then
     brew bundle
 
     # Allow window manager (i.e. yabai) to load during startup
-    echo "$USER ALL = (root) NOPASSWD: "$(which yabai)" --load-sa" | sudo tee -a /private/etc/sudoers.d/yabai
-
+    if ! grep "$USER ALL = (root) NOPASSWD: /usr/local/bin/yabai --load-sa" /private/etc/sudoers.d/yabai; then
+        echo "$USER ALL = (root) NOPASSWD: "$(which yabai)" --load-sa" | sudo tee -a /private/etc/sudoers.d/yabai;
+    fi
     # Configure macOS settings
     source .macos
 elif [ $(uname -s) = 'Linux' ]; then
