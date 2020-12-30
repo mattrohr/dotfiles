@@ -25,8 +25,8 @@ brew "zsh-completions"                       # populates available shell command
 brew "zsh-syntax-highlighting"               # colorizes shell commands, arguments, brackets, etc for clarity
 brew "fdupes"                                # identify or delete duplicate files
 brew "jdupes"                                # duplicate file finder and an enhanced fork of 'fdupes'
-brew "virtualbox"                            # virtualize development environment 
-brew "vagrant"                               # automate VM management and deployment
+cask "virtualbox"                            # virtualize development environment 
+cask "vagrant"                               # automate VM management and deployment
 brew "exiftool"                              # reading and writing metadata
 brew "fzf"                                   # fuzzy finder
 brew "fasd"                                  # Google's "I'm Feeling Lucky" but for cd, based on frequently- and recently-accessed directories
