@@ -3,6 +3,7 @@
 ###############################################################################
 # Search                                                                      #
 ###############################################################################
+
 # Detect which `ls` flavor is in use and colorize for readability
 if ls --color > /dev/null 2>&1; then # GNU `ls`
     colorflag="--color"

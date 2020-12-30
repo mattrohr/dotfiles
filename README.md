@@ -29,11 +29,11 @@ git clone https://github.com/mattrohr/dotfiles.git && cd dotfiles && source inst
 ## Notes
 If `.secret` exists, it will be sourced in [`.zshrc`](https://github.com/mattrohr/dotfiles/blob/master/.zshrc) along with the other files. You may use this to add commands and files you don’t want to commit to a public repository like `~/.ssh/config`, `/etc/hosts`, and `~/.gnupg/`
 
-Scripts are idempotent, they can safely be run again. Useful for when settings get reset, like when macOS updates clobber Touch ID sudo authentication permission.
+Scripts are idempotent, they can safely be run again. This is useful for when settings get reset, like when macOS updates clobber Touch ID sudo authentication permission.
 
 Finally, if you're new to macOS, read [tips and tricks](./tips.md).
 
 ## Acknowledgements
 - [Mathias Bynens](https://mathiasbynens.be/) for his [dotfiles repository structure](https://github.com/mathiasbynens/dotfiles)
-- [Kevin Suttle](http://kevinsuttle.com/) for cataloging [macOS-Defaults project](https://github.com/kevinSuttle/macOS-Defaults), which provides sensible documentation for [`/.macOS`](https://github.com/mattrohr/dotfiles/blob/main/.macOS)
+- [Kevin Suttle](http://kevinsuttle.com/) for cataloging [macOS-Defaults project](https://github.com/kevinSuttle/macOS-Defaults), which provides sensible documentation for [`.macos`](https://github.com/mattrohr/dotfiles/blob/main/.macOS)
 - [Anish Athalye](https://github.com/anishathalye) for his [prompt theme](https://github.com/anishathalye/dotfiles/blob/master/zsh/prompt.zsh)

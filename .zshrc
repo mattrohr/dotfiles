@@ -1,6 +1,6 @@
 # Load the shell dotfiles, and then some:
 # * ~/.extra can be used for other settings not committed to GitHub.
-for file in ~/.{prompt,aliases,functions,secret}; do
+for file in ~/.{aliases,functions,prompt,secret}; do
     [ -r "$file" ] && [ -f "$file" ] && source "$file";
 done;
 unset file;

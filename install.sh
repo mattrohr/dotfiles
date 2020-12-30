@@ -30,16 +30,16 @@ fi
 
 # Link shell configurations to home directory
 ln -s ${PWD} ~
-ln -s ${PWD}/.prompt ~/.prompt
-ln -s ${PWD}/.spectrum ~/.spectrum
 ln -s ${PWD}/.aliases ~/.aliases
 ln -s ${PWD}/.functions ~/.functions
-ln -s ${PWD}/.secret ~/.secret
 ln -s ${PWD}/.gitconfig ~/.gitconfig
 ln -s ${PWD}/.gitignore_global ~/.gitignore_global
-ln -s ${PWD}/.yabairc ~/.yabairc
-ln -s ${PWD}/.skhdrc ~/.skhdrc
 ln -s ${PWD}/.hushlogin ~/.hushlogin
+ln -s ${PWD}/.prompt ~/.prompt
+ln -s ${PWD}/.skhdrc ~/.skhdrc
+ln -s ${PWD}/.spectrum ~/.spectrum
+ln -s ${PWD}/.secret ~/.secret
+ln -s ${PWD}/.yabairc ~/.yabairc
 rm -rf $HOME/.zshrc
 ln -s ${PWD}/.zshrc ~/.zshrc
 
