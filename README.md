@@ -16,7 +16,7 @@ These files backup, restore, and sync my system settings with ubiquitous shell s
 
 2. Specify repository location:
 ```bash
-mkdir -p ~/Library/Mobile\ Documents/com~apple~CloudDocs/Projects && cd ~/Library/Mobile\ Documents/com~apple~CloudDocs/Projects
+mkdir -p ~/Projects && cd ~/Projects
 ```
 
 3. Clone repository (requires **git**) and configure machine:

@@ -2,7 +2,7 @@
 
 Check folders on old system, including `.gitignore`'d files in project's folder:
 ```bash
-ls ~/Desktop ~/Documents ~/Downloads ~/Movies ~/Music ~/Pictures /Applications ~/ && find ~/Library/Mobile\ Documents/com\~apple\~CloudDocs/Projects -name '*.gitignore' -exec ls {} \; -exec cat {} \;
+ls ~/Desktop ~/Documents ~/Downloads ~/Movies ~/Music ~/Pictures /Applications ~/ && find ~/Projects -name '*.gitignore' -exec ls {} \; -exec cat {} \;
 ```
 
 Make a list of currently-installed programs, and compare with `dotfiles` repository version:
