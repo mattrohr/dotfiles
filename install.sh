@@ -30,7 +30,7 @@ fi
 # Link shell configurations to home directory
 ln -s ${PWD} ~
 ln -s ${PWD}/.prompt ~/.prompt
-ln -s ${PWD}/.spectrum.zsh ~/.spectrum.zsh
+ln -s ${PWD}/.spectrum ~/.spectrum
 ln -s ${PWD}/.aliases ~/.aliases
 ln -s ${PWD}/.functions ~/.functions
 ln -s ${PWD}/.secret ~/.secret
