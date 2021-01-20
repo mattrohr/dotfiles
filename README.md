@@ -12,7 +12,7 @@
 These files backup, restore, and sync my system settings with ubiquitous shell scripts.
 
 ## Installation
-1. Log into Mac App Store so macOS apps specified in [`Brewfile`](https://github.com/mattrohr/dotfiles/blob/master/Brewfile) are installed.
+1. Log into Mac App Store so macOS apps specified in [`Brewfile`](https://github.com/mattrohr/dotfiles/blob/main/Brewfile) are installed.
 
 2. Specify repository location:
 ```bash
@@ -27,7 +27,7 @@ git clone https://github.com/mattrohr/dotfiles.git && cd dotfiles && source inst
 4. See [`manual.md`](./manual.md) for manual installation steps.
 
 ## Notes
-If `.secret` exists, it will be sourced in [`.zshrc`](https://github.com/mattrohr/dotfiles/blob/master/.zshrc) along with the other files. You may use this to add commands and files you don’t want to commit to a public repository like `~/.ssh/config`, `/etc/hosts`, and `~/.gnupg/`
+If `.secret` exists, it will be sourced in [`.zshrc`](https://github.com/mattrohr/dotfiles/blob/main/.zshrc) along with the other files. You may use this to add commands and files you don’t want to commit to a public repository like `~/.ssh/config`, `/etc/hosts`, and `~/.gnupg/`
 
 Scripts are idempotent, they can safely be run again. This is useful for when settings get reset, like when macOS updates clobber Touch ID sudo authentication permission.
 
@@ -35,5 +35,5 @@ Finally, if you're new to macOS, read [tips and tricks](./tips.md).
 
 ## Acknowledgements
 - [Mathias Bynens](https://mathiasbynens.be/) for his [dotfiles repository structure](https://github.com/mathiasbynens/dotfiles)
-- [Kevin Suttle](http://kevinsuttle.com/) for cataloging [macOS-Defaults project](https://github.com/kevinSuttle/macOS-Defaults), which provides sensible documentation for [`.macos`](https://github.com/mattrohr/dotfiles/blob/main/.macOS)
+- [Kevin Suttle](http://kevinsuttle.com/) for cataloging [macOS-Defaults project](https://github.com/kevinSuttle/macOS-Defaults), which provides sensible documentation for [`.macos`](https://github.com/mattrohr/dotfiles/blob/main/.macos)
 - [Anish Athalye](https://github.com/anishathalye) for his [prompt theme](https://github.com/anishathalye/dotfiles/blob/master/zsh/prompt.zsh)
