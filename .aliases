@@ -66,4 +66,4 @@ alias ifactive="ifconfig | pcregrep -M -o '^[^\t:]+:([^\n]|\n\t)*status: active'
 alias mirror='wget -m -k -K -E -e robots=off'
 
 # Blacklist servers
-alias block='sudo $VISUAL /etc/hosts'
+alias block='$VISUAL /etc/hosts'
