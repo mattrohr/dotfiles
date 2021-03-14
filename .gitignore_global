@@ -50,3 +50,6 @@ Thumbs.db
 
 # macOS file that prevents Time Machine from asking if a external disk should be used as a backup drive
 .com.apple.timemachine.donotpresent
+
+# editor configuration
+.nova/
