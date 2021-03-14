@@ -1,35 +1,40 @@
 <p align="center">
-    <img width="75%" src="https://i.imgur.com/d0hGgVI.png" alt="Banner">
+<img width="75%" src="https://i.imgur.com/imF4dUf.png" alt="Banner">
 </p>
 
 <p align="center">
-    <a href="https://github.com/mattrohr/dotfiles/actions?query=workflow%3ACI">
-        <img src="https://github.com/mattrohr/dotfiles/workflows/CI/badge.svg?branch=main" alt="CI Status Badge">
-  </a>
+<b>Consistent command-line interface across macOS, Linux, and Windows Subsystem for Linux</b>
+</p>
+
+<p align="center">
+<a href="https://github.com/mattrohr/test/actions?query=workflow%3Abuild">
+  <img src="https://github.com/mattrohr/test/workflows/build/badge.svg?branch=main" alt="CI Status Badge">
+</a>
 </p>
 
 ## About
-These files backup, restore, and sync my system settings with ubiquitous shell scripts.
+These files backup, restore, and sync my system settings with ubiquitous shell scripting. They're called "dotfiles" because they typically are named with a leading period (e.g. [`.zshrc`](./zshrc)), making them hidden by default on Unix-like operating systems.
 
 ## Installation
-1. Log into Mac App Store so macOS apps specified in [`Brewfile`](https://github.com/mattrohr/dotfiles/blob/main/Brewfile) are installed.
+1. (_macOS only_) Log into Mac App Store so macOS apps specified in [`Brewfile`](https://github.com/mattrohr/dotfiles/blob/main/Brewfile) are installed.
 
-2. Specify repository location:
-```bash
-mkdir -p ~/Projects && cd ~/Projects
+2. (_Windows only_) Join [Windows Insider Program](ms-settings:windowsinsider), select Dev Channel, [update Windows](ms-settings:update). Run Command Prompt.exe as administrator, enter ``wsl --install' to install Windows Subsystem for Linux, [install App Installer](https://www.microsoft.com/p/app-installer/9nblggh4nns1?ocid=9nblggh4nns1_ORSEARCH_Bing&rtc=1&activetab=pivot:overviewtab), [select packages](https://winstall.app)
+
+```PowerShell
+winget install AgileBits.1Password  && winget install Microsoft.WindowsTerminal  && winget install Microsoft.VisualStudioCode-System-x64  && winget install Adobe.AdobeAcrobatReaderDC  && winget install 7zip.7zip  && winget install Arduino.Arduino  && winget install Google.Chrome  && winget install Zoom.Zoom  && winget install Python.Python  && winget install Spotify.Spotify
 ```
 
-3. Clone repository (requires **git**) and configure machine:
+3. Clone repository and configure machine:
 ```bash
-git clone https://github.com/mattrohr/dotfiles.git && cd dotfiles && source install.sh
+git clone https://github.com/mattrohr/dotfiles.git && source dotfiles/install.sh
 ```
 
 4. See [`manual.md`](./manual.md) for manual installation steps.
 
 ## Notes
-If `.secret` exists, it will be sourced in [`.zshrc`](https://github.com/mattrohr/dotfiles/blob/main/.zshrc) along with the other files. You may use this to add commands and files you don’t want to commit to a public repository like `~/.ssh/config`, `/etc/hosts`, and `~/.gnupg/`
+If `.secret` exists, it will be sourced in [`.zshrc`](https://github.com/mattrohr/dotfiles/blob/main/.zshrc) along with the other files. You may use this to add commands, files, and directories you don’t want to commit to a public repository like `~/.ssh/config`, `/etc/hosts`, and `~/.gnupg/`
 
-Scripts are idempotent, they can safely be run again. This is useful for when settings get reset, like when macOS updates clobber Touch ID sudo authentication permission.
+Scripts are idempotent: they can safely be run again. This is useful when settings get reset, like when macOS updates clobber Touch ID sudo authentication permission.
 
 Finally, if you're new to macOS, read [tips and tricks](./tips.md).
 

@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
 # Allow yabai to load during startup
 sudo yabai --load-sa
@@ -37,4 +37,4 @@ yabai -m config window_gap                   5
 # Set System Preferences to float by default rather than tile
 yabai -m rule --add label="preferences" app="^System Preferences$" manage=off sticky=on
 
-echo "yabai configuration loaded.."
+echo "yabai configuration loaded..."
