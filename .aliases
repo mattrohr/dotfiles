@@ -42,8 +42,18 @@ alias mv='mv -i'
 # Maintenance                                                                 #
 ###############################################################################
 
-# Update macOS software, Homebrew, and Homebrew packages
-alias update="sudo softwareupdate -i -a; brew update; brew outdated; mas upgrade; brew upgrade; brew cleanup -s --prune=0; tldr --update"
+if [ "$(uname -s)" = 'Darwin' ]; then
+    # Update macOS software, Homebrew, and Homebrew packages
+    alias update="sudo softwareupdate -i -a; brew update; brew outdated; mas upgrade; brew upgrade; brew cleanup -s --prune=0; tldr --update"
+
+elif [ "$(uname -s)" = 'Linux' ]; then
+    # Update Linux software
+    alias update="sudo apt update; sudo apt dist-upgrade; sudo apt autoremove"
+
+else
+    echo "Update command not configured for this operating system"
+    exit 1
+fi
 
 # Recursively delete .DS_Store files
 alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"

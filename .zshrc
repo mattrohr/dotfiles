@@ -1,3 +1,5 @@
+#!/usr/bin/env zsh
+
 # Load the shell dotfiles, and then some:
 # * ~/.secret can be used for other settings not committed to GitHub.
 for file in ~/.{aliases,functions,prompt,secret}; do
@@ -35,11 +37,30 @@ fi
 # ZSH Packages                                                                #
 ###############################################################################
 
-# Populate remaining shell command from history
-source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+if [ $(uname -s) = 'Darwin' ]; then
+    # Populate remaining shell command from history
+    source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-# Colorize shell commands, arguments, brackets, etc for clarity
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+    # Colorize shell commands, arguments, brackets, etc for clarity
+    source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+    
+    # Enable fzf key bindings in macOS
+    source "/usr/local/opt/fzf/shell/key-bindings.zsh"
+    
+    # Override macOS's ⌥C output (i.e. latin script `ç`) to fzf cd
+    bindkey "ç" fzf-cd-widget
+elif [ $(uname -s) = 'Linux' ]; then
+    # Enable fzf key bindings in Linux
+    source /usr/share/doc/fzf/examples/key-bindings.zsh
+    source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+    source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+    
+    # Enable fzf key bindings in Linux
+    source /usr/share/doc/fzf/examples/key-bindings.zsh
+else
+    echo "Operating system not configured"
+    exit 1
+fi
 
 # Populate available shell commands and flags on <tab>
 if type brew &>/dev/null; then
@@ -58,22 +79,17 @@ if [[ ! "$PATH" == */usr/local/opt/fzf/bin* ]]; then
 fi
 [[ $- == *i* ]] && source "/usr/local/opt/fzf/shell/completion.zsh" 2> /dev/null
 
-# Enable fzf key bindings
-source "/usr/local/opt/fzf/shell/key-bindings.zsh"
-
 # Surround fzf results in a box as a visual anchor
 export FZF_DEFAULT_OPTS="--border"
 
 # Set `fd` as the default for combined file and directory fuzzy search
 export FZF_DEFAULT_COMMAND='fd'
 
-# Override macOS's ⌥C output (i.e. latin script `ç`) to fzf cd
-bindkey "ç" fzf-cd-widget
-
 # Set `fd` as the default for `cd`ing directory into child directory
 export FZF_ALT_C_COMMAND="$FZF_DEFAULT_COMMAND --type d"
 
-export MANPAGER='less -X';                # Don’t clear the screen after quitting a manual page.
+# Don’t clear the screen after quitting a manual page.
+export MANPAGER='less -X';
 
 # Colorize man pages
 export LESS_TERMCAP_md=$'\e[01;38;5;74m'  # color default bold headers light blue
@@ -82,6 +98,7 @@ export LESS_TERMCAP_us=$'\e[04;38;5;146m' # color default underlined arguments l
 export LESS_TERMCAP_ue=$'\e[0m'           # end underlining
 
 # Specify saving characteristics for ~/.zsh_history
+export HISTFILE=~/.zsh_history            # set consistent history file path across operating systems
 export HISTSIZE=1048576;                  # set maximum commands saved in memory, default is 500
 export SAVEHIST=$HISTSIZE;                # set maximum commands saved in $HISTFILE
 setopt INC_APPEND_HISTORY                 # add commands as they are typed, not at shell exit
