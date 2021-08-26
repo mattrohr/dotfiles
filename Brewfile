@@ -57,8 +57,6 @@ brew "python@3.9"                            # default language of choice
 # GUI Tools                                                                   #
 ###############################################################################
 
-brew "koekeishiya/formulae/yabai"            # replace floating window management with tiles
-brew "koekeishiya/formulae/skhd"             # manipulate yabai with keyboard
 cask "docker"                                # containerize development environment
 cask "arduino"                               # prototype electronic designs
 cask "adobe-creative-cloud"                  # Illustrator+InDesign, Lightroom Classic+Photoshop, Premiere+After Effects

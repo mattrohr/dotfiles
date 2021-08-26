@@ -17,12 +17,6 @@ if [ "$(uname -s)" = 'Darwin' ]; then
 
     # Install programs in Brewfile
     brew bundle --verbose
-
-    # Allow window manager (i.e. yabai) to load during startup
-    FILE=/private/etc/sudoers.d/yabai
-    if [ -f "$FILE" ] && ! grep "$USER ALL = (root) NOPASSWD: /usr/local/bin/yabai --load-sa" "$FILE"; then
-        echo "$USER ALL = (root) NOPASSWD: ""$(command -v yabai)"" --load-sa" | sudo tee -a "$FILE";
-    fi
     
     # Allow automatic git commit signing
     FILE=~/.gnupg/gpg-agent.conf
@@ -57,12 +51,10 @@ ln -s "${PWD}"/.gitconfig ~/.gitconfig
 ln -s "${PWD}"/.gitignore_global ~/.gitignore_global
 ln -s "${PWD}"/.hushlogin ~/.hushlogin
 ln -s "${PWD}"/.prompt ~/.prompt
-ln -s "${PWD}"/.skhdrc ~/.skhdrc
 ln -s "${PWD}"/.secret ~/.secret
 ln -s "${PWD}"/.spectrum ~/.spectrum
 ln -s "${PWD}"/secret/.gnupg ~/.gnupg
 ln -s "${PWD}"/secret/.ssh ~/.ssh
-ln -s "${PWD}"/.yabairc ~/.yabairc
 rm -rf "$HOME"/.zshrc
 ln -s "${PWD}"/.zshrc ~/.zshrc
 
