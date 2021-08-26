@@ -64,7 +64,8 @@ fi
 
 # Populate available shell commands and flags on <tab>
 if type brew &>/dev/null; then
-    FPATH=$(brew --prefix)/share/zsh-completions:$FPATHfi
+    FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+fi
 
 ###############################################################################
 # Search and History                                                          #
