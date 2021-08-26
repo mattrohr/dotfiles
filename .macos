@@ -9,6 +9,9 @@ osascript -e 'tell application "System Preferences" to quit'
 # General UI/UX                                                               #
 ###############################################################################
 
+# Set beep sound to peaceful nothing
+defaults write NSGlobalDomain com.apple.sound.beep.sound -string ""
+
 # Set to 24 hour clock with date (e.g. Mon Feb 17 16:35)
 defaults write NSGlobalDomain AppleICUForce24HourTime -bool true
 
