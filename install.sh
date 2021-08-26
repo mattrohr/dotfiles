@@ -12,6 +12,15 @@ if [ "$(uname -s)" = 'Darwin' ]; then
     # Enable tools for UNIX-style development, like Make
     xcode-select --install
     
+    # Default to Xcode beta, if present
+    Application=/Applications/Xcode-beta.app
+    if [ -d "$Application" ]; then
+        echo "$Application exists."
+        sudo xcode-select -s /Applications/Xcode-beta.app   
+    else 
+        echo "$Application does not exist."
+    fi
+    
     # Install Homebrew
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
