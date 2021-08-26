@@ -71,7 +71,6 @@ cask "logitech-options"                      # keyboard and mouse drivers
 cask "ltspice"                               # simulate electrical circuits
 cask "preform"                               # print 3D models with resin
 cask "paintbrush"                            # quickly make simple images
-cask "spotify"                               # stream music
 cask "papers"                                # manage scientific papers
 cask "backblaze"                             # backup computer to cloud
 cask "nova"                                  # lightweight and native (i.e. smooth) code editor
