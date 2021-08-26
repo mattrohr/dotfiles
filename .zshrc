@@ -64,10 +64,7 @@ fi
 
 # Populate available shell commands and flags on <tab>
 if type brew &>/dev/null; then
-    FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
-    autoload -Uz compinit
-    compinit
-fi
+    FPATH=$(brew --prefix)/share/zsh-completions:$FPATHfi
 
 ###############################################################################
 # Search and History                                                          #
@@ -85,22 +82,22 @@ export FZF_DEFAULT_OPTS="--border"
 # Set `fd` as the default for combined file and directory fuzzy search
 export FZF_DEFAULT_COMMAND='fd'
 
-# Set `fd` as the default for `cd`ing directory into child directory
+# Set `fd` as the default for `cd`ing into child directory
 export FZF_ALT_C_COMMAND="$FZF_DEFAULT_COMMAND --type d"
 
 # Don’t clear the screen after quitting a manual page.
 export MANPAGER='less -X';
 
 # Colorize man pages
-export LESS_TERMCAP_md=$'\e[01;38;5;74m'  # color default bold headers light blue
-export LESS_TERMCAP_me=$'\e[0m'           # end bolding
-export LESS_TERMCAP_us=$'\e[04;38;5;146m' # color default underlined arguments light purple
-export LESS_TERMCAP_ue=$'\e[0m'           # end underlining
+export LESS_TERMCAP_md=$'\e[01;38;5;74m'  # Color default bold headers light blue
+export LESS_TERMCAP_me=$'\e[0m'           # End bolding
+export LESS_TERMCAP_us=$'\e[04;38;5;146m' # Color default underlined arguments light purple
+export LESS_TERMCAP_ue=$'\e[0m'           # End underlining
 
 # Specify saving characteristics for ~/.zsh_history
-export HISTFILE=~/.zsh_history            # set consistent history file path across operating systems
-export HISTSIZE=1048576;                  # set maximum commands saved in memory, default is 500
-export SAVEHIST=$HISTSIZE;                # set maximum commands saved in $HISTFILE
-setopt INC_APPEND_HISTORY                 # add commands as they are typed, not at shell exit
-setopt EXTENDED_HISTORY                   # add start and duration timestamps, in seconds
-setopt SHARE_HISTORY                      # let `history` display commands from other shell sessions
+export HISTFILE=~/.zsh_history            # Set consistent history file path across operating systems
+export HISTSIZE=1048576;                  # Set maximum commands saved in memory, default is 500
+export SAVEHIST=$HISTSIZE;                # Set maximum commands saved in $HISTFILE
+setopt INC_APPEND_HISTORY                 # Add commands as they are typed, not at shell exit
+setopt EXTENDED_HISTORY                   # Add start and duration timestamps, in seconds
+setopt SHARE_HISTORY                      # Let `history` display commands from other shell sessions

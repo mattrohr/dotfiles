@@ -5,7 +5,7 @@
     # Public key, available for viewing on signed commits
     signingkey = C6C3DD2A201ED90B
 [push]
-    # Add safety features to upstream option (i.e. refuse to push if the upstream branch’s name is different from the local one)
+    # Refuse to push if the upstream branch’s name is different from the local one
     default = simple
 [core]
     # Specify global files to ignore, in addition to any local .gitignore
@@ -15,8 +15,8 @@
     editor = 'nova' --wait
 [alias]
     one = log --all --oneline --pretty=format:'%C(auto)%h %s %C(dim)(%aN, %ar) %C(auto)%d'
-    last = log -1 HEAD
     graph = log --all --graph --pretty=format:'%C(auto)%h %s %C(dim)(%aN, %ar) %C(auto)%d'
+    last = log -1 HEAD
 
     # Show all branches, even across remotes
     branches = branch -a --color -v

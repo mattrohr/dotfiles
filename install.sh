@@ -8,10 +8,9 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 if [ "$(uname -s)" = 'Darwin' ]; then
     echo "Setting up your Mac..."
-
     # Enable tools for UNIX-style development, like Make
     xcode-select --install
-    
+
     # Default to Xcode beta, if present
     Application=/Applications/Xcode-beta.app
     if [ -d "$Application" ]; then
@@ -21,18 +20,21 @@ if [ "$(uname -s)" = 'Darwin' ]; then
         echo "$Application does not exist."
     fi
     
+    # Agree to the Xcode license
+    sudo xcodebuild -license accept
+
     # Install Homebrew
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-
+ 
     # Install programs in Brewfile
     brew bundle --verbose
-    
+
     # Allow automatic git commit signing
     FILE=~/.gnupg/gpg-agent.conf
     if [ -f "$FILE" ] && ! grep "pinentry-program /usr/local/bin/pinentry-mac" "$FILE"; then
         echo "pinentry-program /usr/local/bin/pinentry-mac" | sudo tee -a "$FILE";
     fi
-    
+
     # Configure macOS settings    
     ./.macos
 elif [ "$(uname -s)" = 'Linux' ]; then

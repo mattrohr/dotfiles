@@ -30,12 +30,6 @@ venv
 # macOS file that stores folder-specific settings (e.g. position of icons or the background image)
 .DS_Store
 
-# Windows file that stores folder attributes (e.g. position of icons or the background image)
-Desktop.ini
-
-# Windows cache of thumbnail pictures in the folder, so they're faster to view after opening the folder
-Thumbs.db
-
 # Deprecated macOS file that stores resource fork for data fork sibling. Example: ._IMG_5017.png stores shape of windows for IMG_5017.png
 ._* # Deprecated hidden macOS file that stores resource fork for data fork sibling. Example: ._IMG_5017.png stores shape of windows for IMG_5017.png
 
@@ -51,5 +45,11 @@ Thumbs.db
 # macOS file that prevents Time Machine from asking if a external disk should be used as a backup drive
 .com.apple.timemachine.donotpresent
 
-# editor configuration
+# Editor configurations
 .nova/
+
+# Windows file that stores folder attributes (e.g. position of icons or the background image)
+Desktop.ini
+
+# Windows cache of thumbnail pictures in the folder, so they're faster to view after opening the folder
+Thumbs.db

@@ -1,9 +1,3 @@
-# Windows
-## Post-Install
-### Third-party apps
-#### Install
-- SolidWorks, Keithley KickStart, Intel Quartus Prime
-
 # macOS
 ## Pre-Install
 Check folders on old system, including `.gitignore`'d files in project's folder:
@@ -18,92 +12,138 @@ brew bundle dump --file "Brewfile $(date)" && diff -u Brewfile ~/dotfiles/Brewfi
 
 ## Post-Install
 ### First-party apps
-
-#### Control Center
-- date/time in top right >> Edit Widgets >> match layout with iOS
-
-#### System Preferences.app
-- Apple ID >> Disable Mail
-- Siri >> Safari >> Disable Show Siri Suggestions in App
-- Notifications >> Reminders >> Uncheck “Show in Notification Center” and “Badge app icon”
-- Notifications >> Do Not Disturb >> Turn on Do Not Disturb same hours as Wind Down
-- Notifications >>  Do Not Disturb >> Allow repeated calls
-- Internet Accounts >> (activate)
-- Wallet & Apple Pay >> Add Card
-- Touch ID >> Add Fingerprint
-- Users & Groups >> Change profile photo
-- Screen Time >> Downtime >> Turn On
-- Security & Privacy >> Filevault  >> Turn On FileVault
-- Security & Privacy >> General >> App Store and identified developers
-- Security & Privacy >> FileVault >> Turn on Filevault...
-- Security & Privacy >> Privacy >> Location Services >> Weather
-- Security & Privacy >> Use apple Watch to unlock apps and your mac
-- Keyboard >> Shortcuts >> Spotlight >> Show Finder Search Window >> Rebind to ⌥Space
-- Keyboard >> Input Sources >> + >> Greek >> Add >> "Use the Caps Lock key to Switch to and from U.S." (especially useful for communicating math in emails/texts/etc)
-- Trackpad >> Look up & data detectors >> Tap with three fingers
-- Displays >> Arrangement >> Option + drag external monitor onto built-in screen to mirror Displays. In “built-in Retina display” window, select “Best for external display”
-- Displays >> Night Shift >> Schedule >> Sunset to Sunrise
-- Time Machine >> Select Disk
-- Go through each section to see if any settings were missed
-- Startup Disk >> Unlock >> Select the startup disk that has the default operating system you want to use
-
-#### Finder.app
-- Preferences >> Sidebar >> Favorites >> Enable all but On My Mac
-- Matt's iPad Pro >> General >> Options >> Check Show this iPad when on Wi-Fi
-- Matt's iPad Pro >> Movies >> Check Sync Movies onto Matt's iPad Pro
-- Matt's iPad Pro >> TV Shows >> Check Sync TV Shows onto Matt's iPad Pro
-- Matt's iPad Pro >> Books >> Check Sync Books onto Matt's iPad Pro
-
-#### Contacts.app
-- Preferences >> Default Account >> Google
+#### Books.app
+- Store > Authorizations > Authorize This Computer
+- Preferences > General > enable "Download new purchases automatically"
+- Preferences > Advanced > disable "Include store results when searching
 
 #### Calendar
-- Calendar >> Preferences >> Default calendar app: select Fantastical.app
-- Calendar >> Preferences >> Alerts >> Set All Day Events: None
-- Calendar >> Preferences >> Alerts >> Birthdays: None
+- Preferences > General > Default calendar app > select Fantastical.app
+
+#### Contacts.app
+- Preferences > Default Account > iCloud > disable
+- Preferences > Default Account > Google > enable
+
+#### Control Center
+- date/time in top right > Edit Widgets > match layout with iOS
+
+#### Finder.app
+- Preferences > Sidebar > Favorites > Enable all but Locations:  MBP and Hard disks
+- Connect iPad Pro > Matt's iPad Pro > General > Options > enable Show this iPad when on Wi-Fi
+- Matt's iPad Pro > [Music/Movies/TV Shows/Podcasts/Audiobooks/Books/Photos] > enable Sync [*] onto Matt's iPad Pro
+- Downloads > Drag ~/Downloads/ to left of dock Trash icon
 
 #### Mail.app
-- Preferences >> Accounts >> Account Information >> Send large attachments with Mail Drop
-- Preferences >> Viewing >> Move discarded items into >> Archive
-- Preferences >> Viewing >> Uncheck Load remote content in messages
-- View >> Customize Toolbar >> add Sidebar button to right of Filter button
+- Preferences > Accounts > Account Information > Send large attachments with Mail Drop
+- Preferences > Junk Mail > Enable junk mail filtering
+- Preferences > Viewing > Move discarded items into > Archive
+
+#### Photos.app
+- Preferences > iCloud > enable iCloud Photos
+- Preferences > iCloud > enable Download Originals to this Mac
 
 #### Safari.app
-- Preferences >> Extensions >> enable
-- (bottom right) >> + >> select background
+- Preferences > Extensions > enable
+- (bottom right) > [settings icon] > + > select background
+- Preferences > Advanced > Reading List > enable Save articles for offline reading automatically
+- Preferences > Advanced > enable Show Develop menu in menu bar
+- Dark Reader > Auto
 
+#### System Preferences.app
+- Apple ID > Disable iCloud Mail
+- Desktop & Screen Saver > select Dynamic Desktop
+- Desktop & Screen Saver > Aerial > Automatically download videos and keep everything > Use my location to calculate sunrise and sunset
+- Desktop & Screen Saver > Aerial > Settings > Cache > Limit cache size to > Unlimited
+- Desktop & Screen Saver > Aerial > Settings > Overlays > Location > Position: bottom left
+- Desktop & Screen Saver > Aerial > Settings > Overlays > Weather > Enable > Position: bottom left
+- Desktop & Screen Saver > Aerial > Settings > Overlays > Weather > Icons: °F
+- Desktop & Screen Saver > Aerial > Settings > Overlays > Weather > Location: Use current
+- Desktop & Screen Saver > Aerial > Settings > Overlays > reorder Weather, Clock, Location
+- Desktop & Screen Saver > Screen Saver Options... > Download rotation
+- Siri > Siri Suggestions & Privacy > Safari > disable Show Siri Suggestions in App
+- Language & Region > Translate Languages... > download all 
+- Notifications & Focus > (insert app) > disable “Allow Notifications”
+- Internet Accounts > (activate)
+- Internet Accounts > rename "Google" account
+- Wallet & Apple Pay > Add Card
+- Users & Groups > Login Items > Add Alfred, NightOwl; remove 3Dconnexion
+- Touch ID > Add Fingerprint(s)
+- Accessibility > Siri > Enable Type to Siri
+- Screen Time > Downtime > Scheduled > Turn On
+- Screen Time > Options > Share across devices
+- Security & Privacy > General > App Store and identified developers
+- Security & Privacy > Privacy > Check all permissions 
+- Bluetooth > connect over-ear headphones and other devices
+- Keyboard > Shortcuts > Spotlight > Show Finder Search Window > Rebind to ⌥Space
+- Keyboard > Input Sources > + > Greek > Add > "Use the Caps Lock key to Switch to and from U.S." (especially useful for communicating math in emails/texts/etc)
+- Displays > Arrangement > Option + drag external monitor onto built-in screen to mirror Displays.
+- Displays > Display Settings > Optimize for: > select [external] display
+- Displays > Night Shift > Schedule > Sunset to Sunrise
+- Printers & Scanners > + > select Brother DCP-L2540DW series > Add
+- Sidecar > disable Show Sidebar
+- Battery > Power Adapter > Turn display off after > 20 min
+- Time Machine > Select Disk
+- Consider going through each section to see if any settings were missed
+
+### Third-party apps
+#### Alfred.app
+- General > Alfred Hotkey > rebind to ⌘Space
+- General > Where are you: International > [current country]
+- Features > Default Results > Extras > enable Folders, Documents, Text Files, Images
+- Features > Web Search > disable social media sites
+
+#### Backblaze.app
+- Inherit backup state
+- Settings > Exclusions > + > add ~/Projects/*/data folders and ~/Movies
+
+#### Bartender.app
+- Preferences > License > enter License
+- General > Startup > Launch Bartender at login
+- Preferences > Show For Updates > enable Battery, Time Machine, WiFi
+
+#### Chrome.app
+- ⋮ > Turn on sync
+- ⋮ > Settings > Appearance > disable Show warning before quitting with ⌘Q
+
+#### Fantastical.app
+- Preferences > General > Default task list > change to main account
+- Preferences > General > Default event duration > 15 Minutes
+- Preferences > General > Days per week > 14
+- Preferences > General > Day starts at > 7:00
+- Preferences > General > Day ends at > 23:00
+- Preferences > Calendars > Disable Contacts, Anniversaries, Birthdays
+- Preferences > Calendars > Default task list > change to main account
+
+#### Messages.app
+- Messages > General > Share Automatically > Always Ask
+- Messages > Preferences > iMessage > Enable Messages in iCloud
+- Messages > Preferences > iMessage > Start new Conversations from [email]
+
+#### NightOwl.app
+- enable Sunrise/Sunset
+- Settings > disable Play Sound
+- Settings > disable Hotkey
+
+#### Nova.app
+- Nova > Preferences > Editor > Indentation > Prefer Indent Using > Spaces
+
+#### Wipr.app
+- Get Rid of Ads and Trackers
+- Automatic Refresh
+
+#### Install
+- [3Dconnexion 3DxWare](https://3dconnexion.com/us/drivers/), [Simplify3D](https://cloud.simplify3d.com/account/login), [PDF Expert](https://pdfexpert.com/downloads), [Xcode beta](https://developer.apple.com/download/)
+
+#### Add License Key
+- Simplify3D, PDF Expert, Optimus Player
+
+# Windows
+## Post-Install
+### First-party apps
 #### Boot Camp Assistant.app
 - [Download Windows 10](https://www.microsoft.com/en-us/software-download/windows10)
 - Partition ~200 GB for Windows
 
 ### Third-party apps
-#### Chrome.app
-- Log in and sync extensions
-- ... >> Settings >> Appearance >> Show warning before quitting with ⌘Q
-
-#### Fantastical.app
-- Preferences >> General >> Default event duration >> 15 Minutes
-- Preferences >> General >> Days per week >> 14
-- Preferences >> Calendars >> Disable Contacts, Anniversaries, Birthdays
-
-#### Spotify.app
-- Spotify >> Music Quality >> Streaming quality >> Very High
-- Spotify >> Startup and Window Behavior >> Open Spotify automatically after you log into the computer >> No 
-
-#### Nova.app
-- Nova >> Preferences >> Editor >> Indentation >> Prefer Indent Using >> Spaces
-- Nova >> Tools >> Command Line Tool >> Install
-
-#### Backblaze.app
-- Inherit backup state
-- Settings >> Exclusions >> + >> add project data folders and ~/Movies
-
-#### Launch and Configure
-- Aerial, Bartender, Chrome
-- Alfred assign shortcut key to ⌘Space
-
 #### Install
-- ABBYY FineReader OCR Pro, MATLAB, Adobe Illustrator, InDesign, Photoshop, Lightroom Classic, Premiere, After Effects, 3Dconnexion 3DxWare
-
-#### Add License Key
-- SuperDuper, Bartender, Simplify3D, PDF Expert, Optimus Player, Alfred
+- SolidWorks, Keithley KickStart, Intel Quartus Prime

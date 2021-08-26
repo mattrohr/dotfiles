@@ -1,4 +1,5 @@
 # Personal
 .secret
 secret/
+
 Brewfile.lock.json

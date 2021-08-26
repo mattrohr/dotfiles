@@ -1,4 +1,4 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env bash
 
 # Resource for finding new user settings: https://www.defaults-write.com
 
@@ -61,18 +61,20 @@ defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
 # Disable the “Are you sure you want to open this application?” dialog
 defaults write com.apple.LaunchServices LSQuarantine -bool false
 
-# Disable Touchbar on Sidecar
+# Disable Touch Bar on Sidecar
 defaults write com.apple.sidecar.display showTouchbar -bool false
 
 # Enable Apple Pencil double tap on Sidecar
 defaults write com.apple.sidecar.display doubleTapEnabled -bool true
 
-# Remove Siri from Touchbar control strip
+# Remove Siri from Touch Bar control strip
 defaults write ~/Library/Preferences/com.apple.controlstrip MiniCustomized '(com.apple.system.brightness, com.apple.system.volume , com.apple.system.mute)' 
 
 # Set a fast keyboard repeat rate
-defaults write -g InitialKeyRepeat -int 15 # normal minimum is 15 (225 ms)
-defaults write -g KeyRepeat -int 2 # normal minimum is 2 (30 ms)
+# Default is 15 (225 ms)
+defaults write -g InitialKeyRepeat -int 15
+# Default is 2 (30 ms)
+defaults write -g KeyRepeat -int 2
 
 ###############################################################################
 # Screen                                                                      #
@@ -85,16 +87,16 @@ defaults write com.apple.screencapture type -string "png"
 # Finder                                                                      #
 ###############################################################################
 
-# Finder: allow quitting via ⌘ + Q; doing so will also hide desktop icons
+# Allow quitting via ⌘ + Q; doing so will also hide desktop icons
 defaults write com.apple.finder QuitMenuItem -bool true
 
-# Finder: show all filename extensions
+# Show all filename extensions
 defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 
-# Finder: show status bar
+# Show status bar
 defaults write com.apple.finder ShowStatusBar -bool true
 
-# Finder: show path bar
+# Show path bar
 defaults write com.apple.finder ShowPathbar -bool true
 
 # Display full POSIX path as Finder window title
@@ -156,8 +158,11 @@ defaults write com.apple.dock autohide-time-modifier -float 0
 # Automatically hide and show the Dock
 defaults write com.apple.dock autohide -bool true
 
+# Show only open applications in the Dock
+defaults write com.apple.dock static-only -bool true
+
 ###############################################################################
-# Safari, Webkit                                                              #
+# Safari                                                                      #
 ###############################################################################
 
 # Enable the Develop menu
@@ -166,7 +171,7 @@ defaults write com.apple.Safari IncludeDevelopMenu -bool true
 # Update extensions automatically
 defaults write com.apple.Safari InstallExtensionUpdatesAutomatically -bool true
 
-# Disable usernames and password utoFill
+# Disable usernames and password AutoFill
 defaults write com.apple.Safari AutoFillPasswords -bool false
 
 ###############################################################################
@@ -286,24 +291,16 @@ defaults write org.m0k.transmission BlocklistAutoUpdate -bool true
 defaults write org.m0k.transmission RandomPort -bool true
 
 ###############################################################################
-# Accessibility                                                               #
-###############################################################################
-
-# Enable Text to Speech
-defaults write com.apple.speech.synthesis.general.prefs SpokenUIUseSpeakingHotKeyFlag -bool true
-
-# Set Samantha as default speaker
-defaults write com.apple.speech.voice.prefs SelectedVoiceCreator -int 1886745202
-defaults write com.apple.speech.voice.prefs SelectedVoiceID -int 184844483
-defaults write com.apple.speech.voice.prefs SelectedVoiceName -string "Samantha"
-
-###############################################################################
-# Optimus Player and Wipr                                                     #
+# Optimus Player                                                              #
 ###############################################################################
 
 # Automatically enter full screen and start playing videos in Optimus Player
 defaults write mo.darren.optimus.player.mac DMOPEnterFullScreenAutomaticallyOnOpen -bool true
 defaults write mo.darren.optimus.player.mac DMOPPlayAutomaticallyOnOpen -bool true
+
+###############################################################################
+# Wipr                                                                        #
+###############################################################################
 
 # Enable automatic blacklist refresh of Wipr ad blocker
 defaults write com.giorgiocalderolla.Wipr-Mac enable_login_item -bool true
@@ -323,10 +320,10 @@ duti -s com.panic.nova rs all
 duti -s com.panic.nova sh all
 duti -s com.mathworks.matlab m all
 
-# Data Structure
+# Data Structures
 duti -s com.panic.nova json all
 
-# Config
+# Configs
 duti -s com.panic.nova yml all
 duti -s com.panic.nova toml all
 
@@ -340,7 +337,7 @@ duti -s com.panic.nova js all
 duti -s com.panic.nova css all
 duti -s com.panic.nova html all 2> /dev/null
 
-# Note
+# Notes
 duti -s com.panic.nova md all
 duti -s com.panic.nova txt all
 
