@@ -91,8 +91,6 @@ cask "skype"                                 # communicate with more humans
 cask "imageoptim"                            # optimally compress images for the web to speed up page loads
 mas "Dark Reader for Safari", id: 1438243180 # add dark mode to web pages
 mas "Wipr", id: 1320666476                   # block browser ads
-mas "Instapaper Save", id: 1481302432        # save web pages for later
-mas "Instapaper", id: 1481302432             # read saved web pages
 mas "1Password 7", id: 1333542190            # manage passwords
 mas "Deliveries", id: 290986013              # track package deliveries 
 mas "Pastebot", id: 1179623856               # copy several items at once
