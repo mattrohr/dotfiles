@@ -67,9 +67,9 @@ rm -rf "$HOME"/.zshrc
 ln -s "${PWD}"/.zshrc ~/.zshrc
 
 FILE1=/etc/hosts
-FILE2="${PWD}"/secret/etc/hosts
-if [ -f "$FILE1" ] && [ -f "${PWD}"/secret/hosts ]; then
-    sudo rm -rf "$FILE1" && sudo ln "$FILE2"
+FILE2="${PWD}"/secret/hosts
+if [ -f "$FILE1" ] && [ -f "$FILE2" ]; then
+    sudo rm -rf "$FILE1" && sudo ln "$FILE2" "$FILE1"
 else 
     echo "$FILE1 or $FILE2 don't exist."
 fi
