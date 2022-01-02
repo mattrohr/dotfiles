@@ -42,7 +42,7 @@ venv
 # macOS thumbnail image for mounted drive
 .VolumeIcon.icns
 
-# macOS file that prevents Time Machine from asking if a external disk should be used as a backup drive
+# macOS file that prevents Time Machine from asking if an external disk should be used as a backup drive
 .com.apple.timemachine.donotpresent
 
 # Editor configurations
