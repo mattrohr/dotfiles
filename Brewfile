@@ -93,7 +93,7 @@ cask "papers"                                # Manage research papers
 mas "Paprika Recipe Manager 3", id: 1303222628 # Manage recipes
 mas "1Password 7", id: 1333542190            # Manage passwords
 mas "Dark Reader for Safari", id: 1438243180 # Add dark mode to web pages
-mas "Wipr", id: 1320666476                   # Block browser ads
+mas "AdGuard for Safari", id: 1440147259       # Block browser ads
 mas "Deliveries", id: 290986013              # Track package deliveries 
 mas "Pastebot", id: 1179623856               # Copy several items at once
 mas "Fantastical", id: 975937182             # Schedule events with natural language entry, weather, 14-week view, etc
