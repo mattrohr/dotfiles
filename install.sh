@@ -10,15 +10,6 @@ if [ "$(uname -s)" = 'Darwin' ]; then
     echo "Setting up your Mac..."
     # Enable tools for UNIX-style development, like Make
     xcode-select --install
-
-    # Default to Xcode beta, if present
-    Application=/Applications/Xcode-beta.app
-    if [ -d "$Application" ]; then
-        echo "$Application exists."
-        sudo xcode-select -s /Applications/Xcode-beta.app   
-    else 
-        echo "$Application does not exist."
-    fi
     
     # Agree to the Xcode license
     sudo xcodebuild -license accept
@@ -28,12 +19,19 @@ if [ "$(uname -s)" = 'Darwin' ]; then
  
     # Install programs in Brewfile
     brew bundle --verbose
+    
+    # Install fzf key bindings
+    $(brew --prefix)/opt/fzf/install
+    
+    # Finish installations
+    open /opt/homebrew/Caskroom/papers/latest/Papers\ Installer.app
+    open /opt/homebrew/Caskroom/backblaze/*/Backblaze\ Installer.app
 
     # Allow automatic git commit signing
     FILE=~/.gnupg/gpg-agent.conf
     if [ -f "$FILE" ] && ! grep "pinentry-program /usr/local/bin/pinentry-mac" "$FILE"; then
         echo "pinentry-program /usr/local/bin/pinentry-mac" | sudo tee -a "$FILE";
-    fi
+    fi  
 
     # Configure macOS settings    
     ./.macos
@@ -73,7 +71,7 @@ FILE1=/etc/hosts
 FILE2="${PWD}"/secret/hosts
 if [ -f "$FILE1" ] && [ -f "$FILE2" ]; then
     sudo rm -rf "$FILE1" && sudo ln "$FILE2" "$FILE1"
-else 
+else
     echo "$FILE1 or $FILE2 don't exist."
 fi
 

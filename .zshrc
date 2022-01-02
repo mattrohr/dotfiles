@@ -14,9 +14,6 @@ export GPG_TTY=$(tty);
 # Hide the “default interactive shell is now zsh” warning on macOS
 export BASH_SILENCE_DEPRECATION_WARNING=1;
 
-# Initialize fasd for navigating directories
-eval "$(fasd --init auto)"
-
 ###############################################################################
 # Editor                                                                      #
 ###############################################################################
@@ -34,57 +31,53 @@ else
 fi
 
 ###############################################################################
-# ZSH Packages                                                                #
+# Search, History, and ZSH packages                                           #
 ###############################################################################
+
+# Manage packages with Homebrew
+export PATH=/opt/homebrew/bin:$PATH
 
 if [ $(uname -s) = 'Darwin' ]; then
-    # Populate remaining shell command from history
-    source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-    # Colorize shell commands, arguments, brackets, etc for clarity
-    source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-    
-    # Enable fzf key bindings in macOS
-    source "/usr/local/opt/fzf/shell/key-bindings.zsh"
-    
-    # Override macOS's ⌥C output (i.e. latin script `ç`) to fzf cd
-    bindkey "ç" fzf-cd-widget
-elif [ $(uname -s) = 'Linux' ]; then
-    # Enable fzf key bindings in Linux
-    source /usr/share/doc/fzf/examples/key-bindings.zsh
-    source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-    source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-    
-    # Enable fzf key bindings in Linux
-    source /usr/share/doc/fzf/examples/key-bindings.zsh
-else
-    echo "Operating system not configured"
-    exit 1
+# Setup fzf
+if [[ ! "$PATH" == */opt/homebrew/opt/fzf/bin* ]]; then
+  export PATH="${PATH:+${PATH}:}/opt/homebrew/opt/fzf/bin"
 fi
-
-# Populate available shell commands and flags on <tab>
-if type brew &>/dev/null; then
-    FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
-fi
-
-###############################################################################
-# Search and History                                                          #
-###############################################################################
-
-# Enable fzf including auto-completions
-if [[ ! "$PATH" == */usr/local/opt/fzf/bin* ]]; then
-    export PATH="${PATH:+${PATH}:}/usr/local/opt/fzf/bin"
-fi
-[[ $- == *i* ]] && source "/usr/local/opt/fzf/shell/completion.zsh" 2> /dev/null
-
+    
+# Setup fzf auto-completion
+[[ $- == *i* ]] && source "/opt/homebrew/opt/fzf/shell/completion.zsh" 2> /dev/null
+    
+# Setup fzf key bindings
+source "/opt/homebrew/opt/fzf/shell/key-bindings.zsh"
+    
 # Surround fzf results in a box as a visual anchor
 export FZF_DEFAULT_OPTS="--border"
-
+    
 # Set `fd` as the default for combined file and directory fuzzy search
 export FZF_DEFAULT_COMMAND='fd'
 
 # Set `fd` as the default for `cd`ing into child directory
 export FZF_ALT_C_COMMAND="$FZF_DEFAULT_COMMAND --type d"
+    
+# Override macOS's ⌥C output (i.e. latin script `ç`) to fzf cd
+bindkey "ç" fzf-cd-widget
+    
+# Setup zsh autosuggestions
+source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# Setup zsh syntax highlighting
+export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=/opt/homebrew/share/zsh-syntax-highlighting/highlighters
+    
+# Colorize shell commands, arguments, brackets, etc for clarity
+source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+    
+elif [ $(uname -s) = 'Linux' ]; then
+    echo "Linux operating system not configured for fzf"
+    exit 1
+else
+    echo "Operating system not configured for fzf"
+    exit 1
+fi
 
 # Don’t clear the screen after quitting a manual page.
 export MANPAGER='less -X';

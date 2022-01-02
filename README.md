@@ -20,19 +20,13 @@ These files backup, restore, and sync my system settings with ubiquitous shell s
 
 1. (_macOS only_) Log into Mac App Store so macOS apps specified in [`Brewfile`](./Brewfile) may be installed.
 
-2. (_Windows only_) Join [Windows Insider Program](ms-settings:windowsinsider), select Dev Channel, [update Windows](ms-settings:update). Run Command Prompt.exe as administrator, enter `wsl --install` to install Windows Subsystem for Linux. [Install App Installer](https://www.microsoft.com/p/app-installer/9nblggh4nns1?ocid=9nblggh4nns1_ORSEARCH_Bing&rtc=1&activetab=pivot:overviewtab), [select and install packages](https://winstall.app):
-
-```PowerShell
-winget install AgileBits.1Password && winget install Microsoft.WindowsTerminal && winget install Microsoft.VisualStudioCode-System-x64 && winget install Adobe.AdobeAcrobatReaderDC && winget install 7zip.7zip && winget install Arduino.Arduino && winget install Google.Chrome && winget install Zoom.Zoom && winget install Python.Python && winget install Spotify.Spotify
-```
-
-3. Clone repository and configure machine:
+2. Clone repository and configure machine:
 
 ```bash
 git clone https://github.com/mattrohr/dotfiles.git && cd dotfiles && ./install.sh
 ```
 
-4. See [`manual.md`](./manual.md) for manual installation steps.
+3. See [`manual.md`](./manual.md) for manual installation steps.
 
 ## Notes
 
