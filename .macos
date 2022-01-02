@@ -146,9 +146,6 @@ defaults write com.apple.dock tilesize -int 65
 # Minimize windows into their application’s icon
 defaults write com.apple.dock minimize-to-application -bool true
 
-# Wipe all (default) app icons from the Dock
-defaults write com.apple.dock persistent-apps -array
-
 # Remove the auto-hiding Dock delay
 defaults write com.apple.dock autohide-delay -float 0
 

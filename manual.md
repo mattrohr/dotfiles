@@ -31,7 +31,7 @@ brew bundle dump --file "Brewfile $(date)" && diff -u Brewfile ~/dotfiles/Brewfi
 - Preferences > Sidebar > Favorites > Enable all but Locations:  MBP and Hard disks
 - Connect iPad Pro > Matt's iPad Pro > General > Options > enable Show this iPad when on Wi-Fi
 - Matt's iPad Pro > [Music/Movies/TV Shows/Podcasts/Audiobooks/Books/Photos] > enable Sync [*] onto Matt's iPad Pro
-- Downloads > Drag ~/Downloads/ to left of dock Trash icon
+- Right-click default dock icon's > Options > Remove from Dock
 
 #### Mail.app
 - Preferences > Accounts > Account Information > Send large attachments with Mail Drop
