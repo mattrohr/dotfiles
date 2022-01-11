@@ -155,9 +155,6 @@ defaults write com.apple.dock autohide-time-modifier -float 0
 # Automatically hide and show the Dock
 defaults write com.apple.dock autohide -bool true
 
-# Show only open applications in the Dock
-defaults write com.apple.dock static-only -bool true
-
 ###############################################################################
 # Safari                                                                      #
 ###############################################################################
@@ -296,13 +293,6 @@ defaults write mo.darren.optimus.player.mac DMOPEnterFullScreenAutomaticallyOnOp
 defaults write mo.darren.optimus.player.mac DMOPPlayAutomaticallyOnOpen -bool true
 
 ###############################################################################
-# Wipr                                                                        #
-###############################################################################
-
-# Enable automatic blacklist refresh of Wipr ad blocker
-defaults write com.giorgiocalderolla.Wipr-Mac enable_login_item -bool true
-
-###############################################################################
 # Default Applications                                                        #
 ###############################################################################
 
@@ -355,4 +345,4 @@ duti -s mo.darren.optimus.player.mac aac all
 duti -s mo.darren.optimus.player.mac ogg all
 
 # Documents without file extension (e.g. .gitignore and .aliases)
-duti -s com.panic.nova Document all    
+duti -s com.panic.nova Document all
