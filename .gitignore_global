@@ -31,7 +31,7 @@ venv
 .DS_Store
 
 # Deprecated macOS file that stores resource fork for data fork sibling. Example: ._IMG_5017.png stores shape of windows for IMG_5017.png
-._* # Deprecated hidden macOS file that stores resource fork for data fork sibling. Example: ._IMG_5017.png stores shape of windows for IMG_5017.png
+._*
 
 # macOS file where Spotlight stores indexing data
 .Spotlight-V100

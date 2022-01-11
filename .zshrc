@@ -34,42 +34,44 @@ fi
 # Search, History, and ZSH packages                                           #
 ###############################################################################
 
-# Manage packages with Homebrew
-export PATH=/opt/homebrew/bin:$PATH
-
 if [ $(uname -s) = 'Darwin' ]; then
+    # Manage packages with Homebrew
+    export PATH=/opt/homebrew/bin:$PATH
 
-# Setup fzf
-if [[ ! "$PATH" == */opt/homebrew/opt/fzf/bin* ]]; then
-  export PATH="${PATH:+${PATH}:}/opt/homebrew/opt/fzf/bin"
-fi
+    # Initialize fasd
+    eval "$(fasd --init auto)"
     
-# Setup fzf auto-completion
-[[ $- == *i* ]] && source "/opt/homebrew/opt/fzf/shell/completion.zsh" 2> /dev/null
+    # Setup fzf
+    if [[ ! "$PATH" == */opt/homebrew/opt/fzf/bin* ]]; then
+    export PATH="${PATH:+${PATH}:}/opt/homebrew/opt/fzf/bin"
+    fi
     
-# Setup fzf key bindings
-source "/opt/homebrew/opt/fzf/shell/key-bindings.zsh"
+    # Setup fzf auto-completion
+    [[ $- == *i* ]] && source "/opt/homebrew/opt/fzf/shell/completion.zsh" 2> /dev/null
     
-# Surround fzf results in a box as a visual anchor
-export FZF_DEFAULT_OPTS="--border"
+    # Setup fzf key bindings
+    source "/opt/homebrew/opt/fzf/shell/key-bindings.zsh"
     
-# Set `fd` as the default for combined file and directory fuzzy search
-export FZF_DEFAULT_COMMAND='fd'
+    # Surround fzf results in a box as a visual anchor
+    export FZF_DEFAULT_OPTS="--border"
+    
+    # Set `fd` as the default for combined file and directory fuzzy search
+    export FZF_DEFAULT_COMMAND='fd'
 
-# Set `fd` as the default for `cd`ing into child directory
-export FZF_ALT_C_COMMAND="$FZF_DEFAULT_COMMAND --type d"
+    # Set `fd` as the default for `cd`ing into child directory
+    export FZF_ALT_C_COMMAND="$FZF_DEFAULT_COMMAND --type d"
     
-# Override macOS's ⌥C output (i.e. latin script `ç`) to fzf cd
-bindkey "ç" fzf-cd-widget
+    # Override macOS's ⌥C output (i.e. latin script `ç`) to fzf cd
+    bindkey "ç" fzf-cd-widget
     
-# Setup zsh autosuggestions
-source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+    # Setup zsh autosuggestions
+    source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-# Setup zsh syntax highlighting
-export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=/opt/homebrew/share/zsh-syntax-highlighting/highlighters
+    # Setup zsh syntax highlighting
+    export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=/opt/homebrew/share/zsh-syntax-highlighting/highlighters
     
-# Colorize shell commands, arguments, brackets, etc for clarity
-source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+    # Colorize shell commands, arguments, brackets, etc for clarity
+    source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
     
 elif [ $(uname -s) = 'Linux' ]; then
     echo "Linux operating system not configured for fzf"
