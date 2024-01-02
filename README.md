@@ -8,7 +8,7 @@
 
 <p align="center">
 <a href="https://github.com/mattrohr/dotfiles/actions?query=workflow%3Abuild">
-<img src="https://github.com/mattrohr/dotfiles/workflows/build/badge.svg?branch=main" alt="Build Status Badge">
+<img src="https://github.com/mattrohr/dotfiles/workflows/build/badge.svg" alt="Build Status Badge">
 </a>
 </p>
 
