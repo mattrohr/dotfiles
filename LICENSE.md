@@ -1,6 +1,6 @@
 MIT License
 
-Copyright (c) 2020 Matt Rohr, Kevin Suttle and Mathias Bynens (for most of .macos script), Anish Athalye (for .prompt script).
+Copyright (c) Matt Rohr, Kevin Suttle and Mathias Bynens (for most of .macos script), Anish Athalye (for .prompt script).
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
