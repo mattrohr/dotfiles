@@ -61,8 +61,7 @@ brew "htop"                                    # 'top' alternative with more rea
 
 cask "google-chrome"                           # 'Safari' complement for web development and wider extension availability
 cask "alfred"                                  # 'Spotlight' alternative with faster search
-cask "nova"                                    # Lightweight and native (i.e. smooth) code editor
-cask "visual-studio-code"                      # Heavyweight, fully featured code editor
+cask "visual-studio-code"                      # Write and edit code
 cask "arduino"                                 # Prototype electronic designs
 cask "raspberry-pi-imager"                     # Fetch and flash OS distributions to μSD cards
 cask "ltspice"                                 # Simulate electrical circuits

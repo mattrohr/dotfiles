@@ -50,15 +50,6 @@ up()
 # Edit                                                                        #
 ###############################################################################
 
-# `n` with no arguments opens the current directory in Nova editor, otherwise opens the given file or directory
-n() {
-    if [ $# -eq 0 ]; then
-        nova .;
-    else
-        nova "$@";
-    fi;
-}
-
 # `v` with no arguments opens the current directory in Visual Studio Code editor, otherwise opens the given file or directory
 vs() {
     if [ $# -eq 0 ]; then

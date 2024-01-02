@@ -12,7 +12,7 @@
     excludesfile = ~/.gitignore_global
 
     # Specify editor of choice, and wait for editor to exit before proceeding
-    editor = 'nova' --wait
+    editor = 'code' --wait
 [alias]
     one = log --all --oneline --pretty=format:'%C(auto)%h %s %C(dim)(%aN, %ar) %C(auto)%d'
     graph = log --all --graph --pretty=format:'%C(auto)%h %s %C(dim)(%aN, %ar) %C(auto)%d'

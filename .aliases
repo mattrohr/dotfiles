@@ -65,7 +65,6 @@ alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
 # Mirror stdout to stderr, useful for seeing data going through a pipe
 alias peek='tee >(cat 1>&2)'
 
-
 ###############################################################################
 # Network                                                                     #
 ###############################################################################

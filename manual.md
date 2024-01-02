@@ -144,10 +144,6 @@ brew bundle dump --file "Brewfile $(date)" && diff -u Brewfile ~/dotfiles/Brewfi
 - Settings > disable Play Sound
 - Settings > disable Hotkey
 
-### Nova.app
-
-- Nova > Preferences > Editor > Indentation > Prefer Indent Using > Spaces
-
 #### Install
 - [3Dconnexion 3DxWare](https://3dconnexion.com/us/drivers/), [Simplify3D](https://cloud.simplify3d.com/account/login), [PDF Expert](https://pdfexpert.com/downloads), [Xcode beta](https://developer.apple.com/download/), [Safari Technology Preivew](https://developer.apple.com/safari/technology-preview/)
 

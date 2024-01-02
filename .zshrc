@@ -19,8 +19,8 @@ export BASH_SILENCE_DEPRECATION_WARNING=1;
 ###############################################################################
 
 # Set default text editor preference. Most commands use $VISUAL editor if available, otherwise $EDITOR. There are exceptions like `fc`, so we specify both
-if command -v nova > /dev/null; then
-    export VISUAL='nova'
+if command -v code > /dev/null; then
+    export VISUAL='code'
     export EDITOR=$VISUAL
 elif command -v nvim > /dev/null; then
     export VISUAL='nvim'

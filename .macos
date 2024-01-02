@@ -297,36 +297,35 @@ defaults write mo.darren.optimus.player.mac DMOPPlayAutomaticallyOnOpen -bool tr
 ###############################################################################
 
 # Source Code
-duti -s com.panic.nova py all
-duti -s com.panic.nova rb all
-duti -s com.panic.nova c all
-duti -s com.panic.nova cpp all
-duti -s com.panic.nova h all
-duti -s com.panic.nova go all
-duti -s com.panic.nova rs all
-duti -s com.panic.nova sh all
+duti -s com.microsoft.VSCode py all
+duti -s com.microsoft.VSCode rb all
+duti -s com.microsoft.VSCode c all
+duti -s com.microsoft.VSCode cpp all
+duti -s com.microsoft.VSCode h all
+duti -s com.microsoft.VSCode go all
+duti -s com.microsoft.VSCode rs all
+duti -s com.microsoft.VSCode sh all
 duti -s com.mathworks.matlab m all
 
 # Data Structures
-duti -s com.panic.nova json all
+duti -s com.microsoft.VSCode json all
 
 # Configs
-duti -s com.panic.nova yml all
-duti -s com.panic.nova toml all
+duti -s com.microsoft.VSCode yml all
+duti -s com.microsoft.VSCode toml all
 
 # FPGA
-duti -s com.panic.nova v all
-duti -s com.panic.nova vhd all
-duti -s com.panic.nova do all
+duti -s com.microsoft.VSCode v all
+duti -s com.microsoft.VSCode vhd all
+duti -s com.microsoft.VSCode do all
 
 # Web
-duti -s com.panic.nova js all
-duti -s com.panic.nova css all
-duti -s com.panic.nova html all 2> /dev/null
+duti -s com.microsoft.VSCode js all
+duti -s com.microsoft.VSCode css all
+duti -s com.microsoft.VSCode html all 2> /dev/null
 
 # Notes
-duti -s com.panic.nova md all
-duti -s com.panic.nova txt all
+duti -s com.microsoft.VSCode md all
 
 # Video
 duti -s mo.darren.optimus.player.mac mp4 all 
@@ -345,4 +344,4 @@ duti -s mo.darren.optimus.player.mac aac all
 duti -s mo.darren.optimus.player.mac ogg all
 
 # Documents without file extension (e.g. .gitignore and .aliases)
-duti -s com.panic.nova Document all
+duti -s com.microsoft.VSCode Document all

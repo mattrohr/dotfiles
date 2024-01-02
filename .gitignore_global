@@ -45,9 +45,6 @@ venv
 # macOS file that prevents Time Machine from asking if an external disk should be used as a backup drive
 .com.apple.timemachine.donotpresent
 
-# Editor configurations
-.nova/
-
 # Windows file that stores folder attributes (e.g. position of icons or the background image)
 Desktop.ini
 
