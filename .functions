@@ -51,7 +51,7 @@ up()
 ###############################################################################
 
 # `v` with no arguments opens the current directory in Visual Studio Code editor, otherwise opens the given file or directory
-vs() {
+v() {
     if [ $# -eq 0 ]; then
         code .;
     else
