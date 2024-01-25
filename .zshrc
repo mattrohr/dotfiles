@@ -11,9 +11,6 @@ unset file;
 # https://stackoverflow.com/a/42265848/96656
 export GPG_TTY=$(tty);
 
-# Hide the “default interactive shell is now zsh” warning on macOS
-export BASH_SILENCE_DEPRECATION_WARNING=1;
-
 ###############################################################################
 # Editor                                                                      #
 ###############################################################################
