@@ -1,6 +1,5 @@
 cask_args appdir: '/Applications'              # Encourage installations to act sensibly
 
-tap "homebrew/core"                            # Allow installation of core formulae
 tap "homebrew/cask"                            # Allow installation of GUI applications
 tap "homebrew/cask-drivers"                    # Allow installation of GUI application drivers
 tap "homebrew/bundle"                          # Allow `Brewfile` creation
