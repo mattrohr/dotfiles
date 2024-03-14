@@ -65,7 +65,7 @@ cask "arduino"                                 # Prototype electronic designs
 cask "raspberry-pi-imager"                     # Fetch and flash OS distributions to μSD cards
 cask "ltspice"                                 # Simulate electrical circuits
 cask "kicad"                                   # Design printed circuit boards
-cask "autodesk-fusion360"                      # Design mechanical components
+cask "autodesk-fusion"                         # Design mechanical components
 cask "preform"                                 # Print 3D models with resin
 cask "3dconnexion"                             # 3D mouse driver
 cask "logitech-options"                        # Keyboard and mouse drivers
