@@ -94,7 +94,7 @@ mas "Dark Reader for Safari", id: 1438243180   # Add dark mode to web pages
 mas "Deliveries", id: 290986013                # Track package deliveries 
 mas "Pastebot", id: 1179623856                 # 'Clipboard' complement that can copy and paste several items at once
 mas "Fantastical", id: 975937182               # 'Calendar' alternative with natural language entry, weather, 14-week view, etc
-mas "Notability", id: 736189492                # 'Notes' complement with with synchronous handwriting and audio
+mas "Notability", id: 360593530                # 'Notes' complement with with synchronous handwriting and audio
 mas "Keynote", id: 409183694                   # Better PowerPoint
 mas "Pages", id: 409201541                     # Better Word
 mas "Numbers", id: 409203825                   # Worse Excel
