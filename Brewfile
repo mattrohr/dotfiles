@@ -73,7 +73,6 @@ cask "docker"                                  # Containerize development enviro
 cask "fujitsu-scansnap-home"                   # Scan paper documents
 cask "backblaze"                               # Backup computer to cloud
 cask "carbon-copy-cloner"                      # Backup computer to bootable clone
-cask "superduper"                              # Backup computer to bootable clone 
 cask "mactex"                                  # Typeset LaTeX and TeX documents
 cask "transmission"                            # Download torrents
 cask "bartender"                               # Remove menu bar clutter, but with organic notifications (e.g. display wi-fi and battery when not connected)
