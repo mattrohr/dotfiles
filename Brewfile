@@ -87,8 +87,8 @@ cask "paintbrush"                              # 'Paint.exe' for macOS
 cask "imageoptim"                              # Optimally compress images for the web to speed up page loads
 cask "optimus-player"                          # 'Quicktime' alternative which plays more video formats. Nicer UI and color reproduction than VLC
 cask "papers"                                  # Manage research papers
+cask "1password"                               # 'Keychain' complement that's cross-platform and includes better organization more data types (e.g. banking details, insurance numbers, notes)
 mas "Paprika Recipe Manager 3", id: 1303222628 # Manage recipes
-mas "1Password 7", id: 1333542190              # 'Keychain' complement that's cross-platform and includes better organization more data types (e.g. banking details, insurance numbers, notes)
 mas "Dark Noise", id: 1465439395               # Play white noise 
 mas "Dark Reader for Safari", id: 1438243180   # Add dark mode to web pages
 mas "Deliveries", id: 290986013                # Track package deliveries 
