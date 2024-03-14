@@ -90,7 +90,7 @@ cask "1password"                               # 'Keychain' complement that's cr
 mas "Paprika Recipe Manager 3", id: 1303222628 # Manage recipes
 mas "Dark Noise", id: 1465439395               # Play white noise 
 mas "Dark Reader for Safari", id: 1438243180   # Add dark mode to web pages
-mas "Deliveries", id: 290986013                # Track package deliveries 
+mas "Parcel", id: 639968404                    # Track package deliveries 
 mas "Pastebot", id: 1179623856                 # 'Clipboard' complement that can copy and paste several items at once
 mas "Fantastical", id: 975937182               # 'Calendar' alternative with natural language entry, weather, 14-week view, etc
 mas "Notability", id: 360593530                # 'Notes' complement with with synchronous handwriting and audio
