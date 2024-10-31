@@ -68,7 +68,7 @@ cask "kicad"                                   # Design printed circuit boards
 cask "autodesk-fusion"                         # Design mechanical components
 cask "preform"                                 # Print 3D models with resin
 cask "3dconnexion"                             # 3D mouse driver
-cask "logitech-options"                        # Keyboard and mouse drivers
+cask "logi-options-plus"                       # Keyboard and mouse drivers
 cask "docker"                                  # Containerize development environment. Useful for maximizing reproducibility, like new-developer installs and cloud deployment
 cask "fujitsu-scansnap-home"                   # Scan paper documents
 cask "backblaze"                               # Backup computer to cloud
