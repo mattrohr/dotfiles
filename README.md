@@ -30,9 +30,9 @@ git clone https://github.com/mattrohr/dotfiles.git && cd dotfiles && ./install.s
 
 ## Notes
 
-"If `.secret` exists, it will be sourced in [`.zshrc`](./.zshrc) with other files. Use it for commands, files, and directories you don’t want in a public repository, like server credentials, blacklisted websites, and cryptographic keys."
+If `.secret` exists, it will be sourced in [`.zshrc`](./.zshrc) with other files. Use it for commands, files, and directories you don’t want in a public repository, like server credentials, blacklisted websites, and cryptographic keys.
 
-Scripts are idempotent: they can be rerun safely. Useful for when settings reset, like after macOS updates reset Touch ID sudo authentication."
+Scripts are idempotent: they can be rerun safely. Useful for when settings reset, like after macOS updates reset Touch ID sudo authentication.
 
 If you're new to macOS, read [tips and tricks](./tips.md).
 
